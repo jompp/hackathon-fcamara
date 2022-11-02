@@ -4,8 +4,8 @@
   "description": "Projeto de um sistema de estudos para o Hackathon do Grupo FCamara",
   "main": "index.js",
   "scripts": {
-    "start":"node server",
-    "server":"nodemon server",
+    "start": "node server",
+    "server": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/BeahIF/hackathon-fcamara#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "config": "^3.3.8",
     "express": "^4.18.2",
