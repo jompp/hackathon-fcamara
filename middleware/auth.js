@@ -1,18 +1,29 @@
 const jwt = require('jsonwebtoken');
 const config = require('config');
 
-module.exports = function(req,res,next){
-    //Get token from header
-    const token = req.header('x-auth-token');
+module.exports = function(headers){
+    return new Promise((resolve, reject)=>{
+        
+
+    const token = headers['x-auth-token'];
     if(!token){
-        return res.status(401).json({msg:"Sem token não é possível autorizar!"})
+        return resolve({
+            status:401,
+            error:"Sem token não é possível autorizar!"
+        }) 
     }
     //Verificando token
     try{
 const decoded = jwt.verify(token, config.get('jwtSecret'))
-req.user = decoded.user;
-next();
+
+return resolve({
+    status:200, 
+    json:decoded.user
+})
     }catch(err){
-         res.status(401).json({msg:"Token não é válido!"})
+        return resolve({
+            status:401,
+            error:"Token não é válido!"
+        })
     }
-}
+})}
