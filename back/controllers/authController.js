@@ -1,4 +1,4 @@
-const UserService = require('../services/userService')
+const UserService = require('../../services/userService')
 const { check, validationResult }= require("express-validator")
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -25,7 +25,6 @@ const login = async (req,res,next)=>{
     if(!errors.isEmpty()){
         return res.status(400).json({errors:errors.array()})
     }
-    console.log(req.body)
     const { email, password}=req.body;
     try{
         let user = await UserService.getOneUser(email)
