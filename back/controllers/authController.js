@@ -1,4 +1,4 @@
-const UserService = require('../../services/userService')
+const UserService = require('../../back/services/userService')
 const { check, validationResult }= require("express-validator")
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');

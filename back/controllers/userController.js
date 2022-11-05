@@ -4,7 +4,7 @@ const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const config = require("config");
 const gravatar = require("gravatar")
-const UserService = require("../../services/userService")
+const UserService = require("../../back/services/userService")
 
 
 const create = async(req,res,next)=>{
