@@ -19,3 +19,17 @@ exports.create = async function (body){
         throw Error("Error while creating trilha")
     }
 }
+
+
+exports.addConteudo= async function( trilha, id){
+    
+    try{
+       let trilhaAtualizar = new Trilha()
+       trilhaAtualizar = await Trilha.find({"titulo":trilha});
+       trilhaAtualizar[0].conteudos = [...trilhaAtualizar[0].conteudos,id]
+       await trilhaAtualizar[0].save();
+       return "Conteúdo adicionado na trilha"
+   }catch(e){
+       throw Error("Error while creating trilha")
+   }
+}

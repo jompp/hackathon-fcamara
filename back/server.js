@@ -10,6 +10,7 @@ app.get('/', (req,res)=> res.send('API Running'));
 app.use('/api/user', require('./routes/api/user'))
 app.use('/api/auth', require('./routes/api/auth'))
 app.use('/api/curso', require('./routes/api/curso'))
+app.use('/api/conteudo', require('./routes/api/conteudos'))
 
 app.use('/api/trilhas', require('./routes/api/trilhas'))
 

@@ -55,7 +55,6 @@ user = await UserService.create({
    res.status(500).send('Server error')
        }
    
-       console.log(req.body)
    }
 
 module.exports = {create}
