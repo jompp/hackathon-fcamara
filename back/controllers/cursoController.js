@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const config = require("config");
 const gravatar = require("gravatar")
 const CursoService = require('../services/cursoService')
+const TrilhaService = require('../services/trilhaService')
 
 const create = async (req,res,next)=>{
     check('titulo','Titulo e obrigatorio').not().isEmpty()
@@ -24,9 +25,28 @@ return
                 res.json(curso)
             
                 }catch(err){
+                    console.error(err.message)
+                    res.status(500).send('Server error')
+                }
+}
+
+
+const addTrilha = async (req,res,next)=>{
+    
+    const {titulo, curso}=req.body;
+    try{
+        let trilha = await TrilhaService.getTrilhaByTitulo({'titulo':titulo});
+        if(trilha.length<=0){
+            res.status(400).json({errors:[{msg:'Trilha não existe!'}]})
+            return
+         }else{
+         cursoAtualizado = await CursoService.addTrilha(trilha, curso)
+                res.json(cursoAtualizado)
+            }   
+                }catch(err){
             console.error(err.message)
             res.status(500).send('Server error')
                 }
 }
 
-module.exports ={create}
+module.exports ={create,addTrilha}

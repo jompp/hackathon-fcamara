@@ -17,3 +17,16 @@ exports.create = async function (body){
         throw Error("Error while creating curso")
     }
 }
+
+exports.addTrilha= async function(trilha, curso){
+    const trilha_id = trilha[0]._id
+    try{
+       let cursoAtualizar = new Curso()
+       cursoAtualizar = await Curso.find({"titulo":curso});
+       cursoAtualizar[0].trilhas = [...cursoAtualizar[0].trilhas, trilha_id]
+       await cursoAtualizar[0].save();
+   }catch(e){
+       throw Error("Error while creating curso")
+   }
+    
+}

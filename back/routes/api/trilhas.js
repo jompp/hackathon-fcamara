@@ -5,4 +5,6 @@ const trilhaControler = require('../../controllers/trilhaController')
 //@access Public
 router.get('/', (req,res)=> res.send("Trilhas route"))
 router.post('/', trilhaControler.create)
+// router.post('/', trilhaControler.create)
+
 module.exports = router;
