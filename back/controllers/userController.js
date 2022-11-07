@@ -1,4 +1,4 @@
-
+require('dotenv/config')
 const { check, validationResult }= require("express-validator")
 const User = require('../models/User')
 const jwt = require('jsonwebtoken')
@@ -6,8 +6,7 @@ const config = require("config");
 const gravatar = require("gravatar")
 const UserService = require("../../back/services/userService")
 
-
-const create = async(req,res,next)=>{
+const create = async(req,res,next) => {
     check('name',
     'Name is required').not().isEmpty(), 
     check('email','Informe um email válido').isEmail(),
@@ -43,7 +42,7 @@ user = await UserService.create({
                    id:user.id,
                }
            }
-           jwt.sign(payload,config.get('jwtSecret'),{
+           jwt.sign(payload, process.env.JWT_SECRET,{
                expiresIn:360000
            },(err,token)=>{
                if(err) throw err;
