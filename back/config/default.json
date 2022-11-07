@@ -1,4 +1,0 @@
-{
-    "mongoURI":"mongodb+srv://beatriz:bQYJFAnooXCr4B4a@gettingstarted.cotzz.mongodb.net/?retryWrites=true&w=majority",
-    "jwtSecret":"mysecret"
-}
