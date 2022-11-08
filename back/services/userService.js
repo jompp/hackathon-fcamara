@@ -67,12 +67,3 @@ exports.updateUser = async function (id, body) {
     throw Error('Error while update user');
   }
 };
-
-exports.deleteUser = async function (userId) {
-  try {
-    await User.deleteOne({ _id: userId });
-  } catch (e) {
-    // Log Errors
-    throw Error('Error while Finding User');
-  }
-};

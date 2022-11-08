@@ -1,3 +1,4 @@
+require('dotenv/config')
 const { check, validationResult } = require('express-validator');
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
@@ -43,7 +44,7 @@ const create = async (req, res, next) => {
     //         id: user.id,
     //     }
     // }
-    // jwt.sign(payload, config.get('jwtSecret'), {
+    // jwt.sign(payload, process.env.JWT_SECRET, {
     //     expiresIn: 360000
     // }, (err, token) => {
     //     if (err) throw err;
