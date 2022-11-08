@@ -1,0 +1,100 @@
+.login-register-form {
+    padding: 3.37rem 3.06rem 2.19rem;
+    background-color: #222327;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-register-form legend {
+    font-weight: 700;
+    font-size: 1.625rem;
+    color: #fff;
+    padding-bottom: 1.5rem;
+    align-self: start;
+}
+
+.login-register-form fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.login-register-form .icon-ipt-box {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    width: 24.93rem;
+    height: 4.06rem;
+    border-radius: 5px;
+    background-color: #121214;
+}
+
+.login-register-form .icon:not(.eye-slash) {
+    padding-left: .72rem
+}
+
+.login-register-form .icon.eye-slash {
+    padding-right: .5rem;
+    cursor: pointer;
+}
+
+.login-register-form input {
+    background-color: #121214;
+    color: #BBBBBB;
+    width: 19.69rem;
+    height: 1.56rem;
+    font-size: 1rem;
+}
+
+.login-register-form .form-text {
+    color: #CCCCCC;
+    font-weight: 400;
+    padding-top: 4.06rem;
+    padding-bottom: 1.06rem;
+    max-width: 21.37rem;
+    text-align: center;
+}
+
+.login-register-form .form-text a {
+    color: #FFA800;
+    text-decoration: none;
+}
+
+.login-register-form button {
+    color: #292D32;
+    font-weight: 700;
+    font-size: 24px;
+    background-color: #FFA000;
+    width: 25rem;
+    height: 4.06rem;
+    border-radius: 5px;
+}
+
+.login-register-form .back-to-login-box {
+    display: flex;
+    gap: .44rem;
+    align-items: center;
+    cursor: pointer;
+    align-self: start;
+    padding-top: 1.75rem;
+}
+
+@keyframes go-back {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-6px);
+    }
+}
+
+.login-register-form .back-to-login-box:hover img {
+    animation: go-back .6s alternate infinite;
+}
+
+.login-register-form .back-to-login-box a {
+    color: #BBBBBB;
+    text-decoration: none;
+}
