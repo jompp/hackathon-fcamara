@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import './RegisterAndLoginForm.css'
 
 import { useForm } from "react-hook-form"
@@ -14,11 +14,12 @@ import logo from '../../assets/images/logo.png'
 
 export default function Form(props) {
 	const { register, handleSubmit, formState:{ errors } } = useForm({
-    resolver: yupResolver(props.yupSchema)
-  });
-  const onSubmit = (data) => console.log(data);
+	resolver: yupResolver(props.yupSchema)
+	});
+	
+	const [showPassword, setShowPassword] = useState(false)
 
-  return (
+  	return (
 		<section className='form-logo-box'>
 			<div className='slogan-logo-box'>
 				<img src={logo} alt="Logo" />
@@ -48,15 +49,15 @@ export default function Form(props) {
 					<div className="ipt-err-box">
 						<div className="icon-ipt-box">
 							<img className='icon' src={lockIcon} alt="Ícone de cadeado" />
-							<input {...register("password")} type="password" name="password" placeholder='Sua senha'/>
-							<img className='icon eye-slash' src={eyeSlashIcon} alt="Ícone de cadeado" />
+							<input {...register("password")} type={showPassword ? 'text' : 'password'} name="password" placeholder='Sua senha'/>
+							<img className='icon eye-slash' src={showPassword ? eyeIcon : eyeSlashIcon} alt="Ícone de cadeado" onClick={() => setShowPassword(!showPassword)}/>
 						</div>
 						<span>{errors.password?.message}</span>
 					</div>
 				</fieldset>
 
 				{props.text}
-				<button type='submit' onClick={handleSubmit(onSubmit)}>{props.textButton}</button>
+				<button type='submit'>{props.textButton}</button>
 				<div className='back-to-login-box'>
 					<img src={arrowLeftIcon} alt="Seta para a esquerda" />
 					<a href="#">Voltar para o login</a>
