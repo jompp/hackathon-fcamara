@@ -16,7 +16,8 @@ export default function Form(props) {
 	const { register, handleSubmit, formState:{ errors } } = useForm({
 	resolver: yupResolver(props.yupSchema)
 	});
-	
+	const onSubmit = props.onSubmit;	
+
 	const [showPassword, setShowPassword] = useState(false)
 
   	return (
@@ -57,7 +58,7 @@ export default function Form(props) {
 				</fieldset>
 
 				{props.text}
-				<button type='submit'>{props.textButton}</button>
+				<button onClick={handleSubmit(onSubmit)}>{props.textButton}</button>
 				<div className='back-to-login-box'>
 					<img src={arrowLeftIcon} alt="Seta para a esquerda" />
 					<a href="#">Voltar para o login</a>
