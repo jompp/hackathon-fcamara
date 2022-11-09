@@ -58,6 +58,11 @@
     background-color: #121214;
 }
 
+.login-register-form span {
+    color: #FFA000;
+    font-size: 0.875rem;
+}
+
 .login-register-form .icon:not(.eye-slash) {
     padding-left: .72rem
 }
