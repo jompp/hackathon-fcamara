@@ -57,6 +57,11 @@ exports.create = async function (body) {
 
 exports.updateUser = async function (id, body) {
   try {
+    if (body.password) {
+      const salt = await bcrypt.genSalt(10);
+      body.password = await bcrypt.hash(body.password, salt);
+    }
+
     const user = await User.findByIdAndUpdate(id, body, {
       new: true,
     });
