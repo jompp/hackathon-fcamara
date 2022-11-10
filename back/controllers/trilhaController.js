@@ -21,7 +21,6 @@ const create = async (req,res,next)=>{
          trilha = await TrilhaService.create({
             titulo, 
                 })
-                console.log(trilha)
                 res.status(200).json(trilha)
             
                 }catch(err){
