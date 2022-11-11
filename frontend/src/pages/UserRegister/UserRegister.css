@@ -1,0 +1,18 @@
+.register-form-page {
+    background-color: #121214;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width: 550px) {
+    .login-register-form .form-text {
+        display: none;
+    }
+
+    .login-register-form button {
+        margin-top: 1.56rem;
+    }
+}
