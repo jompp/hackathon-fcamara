@@ -7,7 +7,7 @@ const CursoSchema = new mongoose.Schema({
     trilhas:{ 
         type:[mongoose.Schema.Types.ObjectId],
         ref:'trilha'
-    },
+    }
  
 })
 

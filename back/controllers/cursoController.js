@@ -49,4 +49,24 @@ const addTrilha = async (req,res,next)=>{
                 }
 }
 
-module.exports ={create,addTrilha}
+const getAll= async (req,res,next)=>{
+    try{
+
+        let cursos = await CursoService.getAll();
+        console.log(cursos)
+        let cursosReturn = []
+        cursos.forEach(curso=> {
+            cursosReturn.push({id:curso?._id,
+            titulo: curso?.titulo,
+        created_by :curso?.created_by
+    // tempo_estimado :
+})
+        });
+       
+        res.status(200).json(cursosReturn)
+        return 
+    }catch(err){
+        res.status(500).send("Server error")
+    }
+}
+module.exports ={create,addTrilha, getAll}

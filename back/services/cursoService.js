@@ -1,3 +1,4 @@
+const Conteudo = require('../models/Conteudo');
 const Curso = require('../models/Curso')
 exports.getOneCurso = async function(body){
     try{
@@ -29,4 +30,15 @@ exports.addTrilha= async function(trilha, curso){
        throw Error("Error while creating curso")
    }
     
+}
+
+
+exports.getAll = async function(){
+    try{
+        let todosCursos = await Curso.find();
+        return todosCursos;
+    }catch(e){
+        throw Error('Error while finding cursos')
+
+    }
 }
