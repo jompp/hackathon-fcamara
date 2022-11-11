@@ -11,6 +11,7 @@ import eyeSlashIcon from '../../assets/icons/eye-slash.svg'
 import eyeIcon from '../../assets/icons/eye.svg'
 import arrowLeftIcon from '../../assets/icons/arrow-left.svg'
 import logo from '../../assets/images/logo.png'
+import logoBanner from '../../assets/images/logo-banner.png'
 
 export default function Form(props) {
 	const { register, handleSubmit, formState:{ errors } } = useForm({
@@ -22,13 +23,16 @@ export default function Form(props) {
 
   	return (
 		<section className='form-logo-box'>
+			<img className='logo-banner-mobile' src={logoBanner} alt="Banner da da Orange Juice" />
 			<div className='slogan-logo-box'>
-				<img src={logo} alt="Logo" />
+				<img src={logo} alt="Logo da Orange Juice" />
 				<h2>A plataforma mais vitaminada do mundo</h2>
 			</div>
 
+			<h2 className='form-legend mobile'>Crie sua conta</h2>
+
 			<form className='login-register-form'>
-				<legend>Crie sua conta</legend>
+				<legend className='form-legend'>Crie sua conta</legend>
 				
 				<fieldset>
 					<div className="ipt-err-box">

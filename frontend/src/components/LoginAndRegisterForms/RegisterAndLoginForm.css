@@ -3,7 +3,7 @@
     gap: 5.62rem;   
 }
 
-.slogan-logo-box {
+.form-logo-box .slogan-logo-box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,11 +12,15 @@
     padding-top: 15px 
 } 
 
-.slogan-logo-box img {
+.form-logo-box .slogan-logo-box img {
     width: 219.58px;
 }
 
-.slogan-logo-box h2 {
+.form-logo-box .logo-banner-mobile {
+    display: none;
+}
+
+.form-logo-box .slogan-logo-box h2 {
     font-weight: 700;
     font-size: 3rem;
     color: #FFF;
@@ -24,16 +28,20 @@
     text-align: center;
 }
 
+.form-logo-box .form-legend.mobile {
+    display: none;    
+}
+
 .login-register-form {
-    padding: 3.37rem 3.06rem 2.19rem;
+    padding: 3.37rem 3.06rem 5.75rem;
     background-color: #222327;
-    width: fit-content;
+    width: 25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login-register-form legend {
+.form-logo-box .form-legend {
     font-weight: 700;
     font-size: 1.625rem;
     color: #fff;
@@ -99,10 +107,15 @@
     font-weight: 700;
     font-size: 24px;
     background-color: #FFA000;
-    width: 25rem;
+    width: 100%;
     height: 4.06rem;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.login-register-form button:hover {
+    background-color: #D9D9D9;
+    transition: .4s;
 }
 
 .login-register-form .back-to-login-box {
@@ -112,7 +125,6 @@
     cursor: pointer;
     align-self: start;
     padding-top: 1.75rem;
-    padding-bottom: 3.19rem;
 }
 
 @keyframes go-back {
@@ -131,4 +143,67 @@
 .login-register-form .back-to-login-box a {
     color: #BBBBBB;
     text-decoration: none;
+}
+
+@media(max-width: 1100px) {
+    .login-register-form {
+        width: 20rem;
+    }
+
+    .form-logo-box .slogan-logo-box h2 {
+        font-size: 2.4rem;
+        width: 286px
+    }
+
+    .form-logo-box .slogan-logo-box img {
+        width: 200px;
+    }
+}
+
+@media(max-width: 860px) {
+    .login-register-form {
+        width: 24rem;
+    }
+
+    .form-logo-box {
+        flex-direction: column;
+        margin: 2.5rem 0 4.375rem;
+        gap: 2.5rem;
+    }
+
+    .form-logo-box .slogan-logo-box {
+        display: none;
+    }
+
+    .form-logo-box .logo-banner-mobile {
+        display: block;
+    }
+}
+
+@media(max-width: 550px) {
+    .form-logo-box .logo-banner-mobile {
+        width: 81vw;
+        display: block;
+        height: 60px;
+        align-self: center;
+    }
+
+    .form-logo-box .form-legend.mobile {
+        display: block;
+        font-weight: 600;
+        padding: 0 0 0 1.5rem;
+    }
+
+    .form-logo-box .form-legend {
+        display: none;
+    }
+
+    .login-register-form {
+        width: 92vw;
+        box-sizing: border-box;
+    }
+
+    .login-register-form button {
+        font-size: 1.25rem;
+    }
 }
