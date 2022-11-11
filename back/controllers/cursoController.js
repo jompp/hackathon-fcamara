@@ -64,15 +64,12 @@ const getAll= async (req,res,next)=>{
         let cursosReturn = []
        for (const curso of cursos) {
         let user = await UserService.getUserById(curso?.created_by)
-            console.log(user)
             cursosReturn.push({id:curso?._id,
             titulo: curso?.titulo,
-        created_by :user?.name
+            created_by :user?.name
     // tempo_estimado :
 })
        }
-        console.log("here")
-       console.log(cursosReturn)
         res.status(200).json(cursosReturn)
         return 
     }catch(err){

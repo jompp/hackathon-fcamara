@@ -11,7 +11,11 @@ const CursoSchema = new mongoose.Schema({
     created_by:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'user'
-    }
+    },
+    tempo_estimado : {
+            type:Date, 
+            required:true
+    }    
 })
 
 module.exports = Curso = mongoose.model('Curso', CursoSchema)

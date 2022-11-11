@@ -13,7 +13,7 @@ const ConteudoSchema = new mongoose.Schema({
     required:true
    },
    duracao:{
-    type:String, 
+    type:Date, 
     required:true
    },
    link:{

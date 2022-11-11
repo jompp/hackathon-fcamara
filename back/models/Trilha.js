@@ -8,6 +8,11 @@ const TrilhaSchema = new mongoose.Schema({
     type:[mongoose.Schema.Types.ObjectId],
     ref:'conteudo'
 },
+tempo_estimado : {
+        type:Date, 
+        required:true
+       
+}
 })
 
 module.exports = Trilha= mongoose.model('Trilha', TrilhaSchema)
