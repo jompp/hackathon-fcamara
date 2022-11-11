@@ -29,13 +29,13 @@ export default function Form(props) {
 				<h2>A plataforma mais vitaminada do mundo</h2>
 			</div>
 
-			<h2 className='form-legend mobile'>Crie sua conta</h2>
+			<h2 className='form-legend mobile'>{props.formLegend}</h2>
 
 			<form className='login-register-form'>
-				<legend className='form-legend'>Crie sua conta</legend>
+				<legend className='form-legend'>{props.formLegend}</legend>
 				
 				<fieldset>
-					<div className="ipt-err-box">
+					<div className="ipt-err-box name">
 						<div className="icon-ipt-box" >
 							<img className='icon' src={userIcon} alt="Ícone de usuário" />
 							<input {...register('name')} type="text" name="name" placeholder='Seu nome'/>
@@ -57,12 +57,16 @@ export default function Form(props) {
 							<input {...register("password")} type={showPassword ? 'text' : 'password'} name="password" placeholder='Sua senha'/>
 							<img className='icon eye-slash' src={showPassword ? eyeIcon : eyeSlashIcon} alt="Ícone de cadeado" onClick={() => setShowPassword(!showPassword)}/>
 						</div>
+						<span className='forgot-login-password'>Esqueceu sua senha?</span>
 						<span>{errors.password?.message}</span>
 					</div>
 				</fieldset>
-
-				{props.text}
-				<button onClick={handleSubmit(onSubmit)}>{props.textButton}</button>
+				
+				<div className='txt-btn-box'>
+					{props.text}
+					<button onClick={handleSubmit(onSubmit)}>{props.textButton}</button>	
+				</div>
+				
 				<div className='back-to-login-box'>
 					<img src={arrowLeftIcon} alt="Seta para a esquerda" />
 					<a href="#">Voltar para o login</a>

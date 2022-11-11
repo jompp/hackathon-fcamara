@@ -20,6 +20,7 @@ export default function UserRegister() {
   return (
     <div className='register-form-page'>
       <Form 
+        formLegend='Crie sua conta'
         text={<p className='form-text'>Ao se registrar, você aceita nossos <a href='#'>termos de uso</a> e a nossa <a href="#">política de privacidade</a>.</p>}
         textButton={waitingResponse ? <LoadingCircle /> : 'Cadastrar'}
         yupSchema={yup.object({

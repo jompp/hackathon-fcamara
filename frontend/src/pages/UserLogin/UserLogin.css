@@ -1,0 +1,24 @@
+.login-form-page {
+    background-color: #121214;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-page .login-register-form {
+    padding-bottom: 4.5rem;
+}
+
+.login-form-page .ipt-err-box.name {
+    display: none;
+}
+
+.login-form-page .form-text {
+    padding-top: 5.12rem;
+}
+
+.login-form-page .back-to-login-box {
+    display: none;
+}
