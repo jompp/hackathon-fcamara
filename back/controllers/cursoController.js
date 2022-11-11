@@ -5,6 +5,8 @@ const gravatar = require("gravatar")
 const CursoService = require('../services/cursoService')
 const TrilhaService = require('../services/trilhaService')
 const authService = require('../middleware/auth')
+const UserService = require('../services/userService');
+const User = require("../models/User");
 const create = async (req,res,next)=>{
     check('titulo','Titulo e obrigatorio').not().isEmpty()
     const data = await authService.decodeToken(req.headers['x-auth-token']);
@@ -59,16 +61,18 @@ const getAll= async (req,res,next)=>{
     try{
 
         let cursos = await CursoService.getAll();
-        console.log(cursos)
         let cursosReturn = []
-        cursos.forEach(curso=> {
+       for (const curso of cursos) {
+        let user = await UserService.getUserById(curso?.created_by)
+            console.log(user)
             cursosReturn.push({id:curso?._id,
             titulo: curso?.titulo,
-        created_by :curso?.created_by
+        created_by :user?.name
     // tempo_estimado :
 })
-        });
-       
+       }
+        console.log("here")
+       console.log(cursosReturn)
         res.status(200).json(cursosReturn)
         return 
     }catch(err){
