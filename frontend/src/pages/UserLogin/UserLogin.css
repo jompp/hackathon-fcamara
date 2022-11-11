@@ -15,10 +15,30 @@
     display: none;
 }
 
-.login-form-page .form-text {
-    padding-top: 5.12rem;
+.login-form-page .txt-btn-box {
+    padding-top: 5.13rem;
 }
 
 .login-form-page .back-to-login-box {
     display: none;
+}
+
+@media(max-width: 550px) {
+    .login-form-page .login-register-form {
+        padding-bottom: 9.2rem;
+    }
+
+    .login-form-page .form-legend.mobile {
+        font-size: 2rem;
+    }
+
+    .login-form-page .txt-btn-box {
+        flex-direction: column-reverse;
+        padding-top: 3.25rem;
+        gap: 2.15rem;
+    }
+
+    .login-form-page .form-text {
+        display: inline;
+    }
 }

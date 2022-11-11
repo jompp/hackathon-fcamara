@@ -95,8 +95,6 @@
 .login-register-form .form-text {
     color: #CCCCCC;
     font-weight: 400;
-    padding-top: 4.06rem;
-    padding-bottom: 1.06rem;
     max-width: 21.37rem;
     text-align: center;
 }
@@ -107,10 +105,12 @@
 }
 
 .login-register-form .txt-btn-box {
+    padding-top: 4.06rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.06rem;
 }
 
 .login-register-form button {
@@ -220,5 +220,9 @@
 
     .login-register-form button {
         font-size: 1.25rem;
+    }
+
+    .login-register-form .form-text {
+        font-size: .875rem;
     }
 }
