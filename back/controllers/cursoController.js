@@ -39,8 +39,7 @@ created_by:data.user.id
 
 
 const addTrilha = async (req,res,next)=>{
-    console.log(req)
-    console.log(next)
+
     const {titulo, curso}=req.body;
     try{
         let trilha = await TrilhaService.getTrilhaByTitulo({'titulo':titulo});
