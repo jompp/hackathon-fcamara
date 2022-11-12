@@ -7,11 +7,6 @@ const TrilhaSchema = new mongoose.Schema({
    conteudos:{ 
     type:[mongoose.Schema.Types.ObjectId],
     ref:'conteudo'
-},
-tempo_estimado : {
-        type:Date, 
-        required:true
-       
 }
 })
 
