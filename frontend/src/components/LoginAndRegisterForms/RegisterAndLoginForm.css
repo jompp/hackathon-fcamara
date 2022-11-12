@@ -9,7 +9,7 @@
     align-items: center;
     gap: .65rem;
     width: fit-content;
-    padding-top: 15px 
+    padding-top: 25px 
 } 
 
 .form-logo-box .slogan-logo-box img {
@@ -33,7 +33,7 @@
 }
 
 .login-register-form {
-    padding: 3.37rem 3.06rem 5.75rem;
+    padding: 3.37rem 3.06rem 4rem;
     background-color: #222327;
     width: 25rem;
     display: flex;
@@ -66,9 +66,23 @@
     background-color: #121214;
 }
 
+.login-register-form .icon-ipt-box.invalid {
+    border: 2px solid #FF3200;
+}
+
 .login-register-form span {
     color: #FFA000;
     font-size: 0.875rem;
+    padding-top: 3px;
+    display: block;
+}
+
+.login-register-form span.invalid {
+    color: #FF3200;
+}
+
+.login-register-form .forgot-login-password {
+    cursor: pointer;
 }
 
 .login-register-form .icon:not(.eye-slash) {
@@ -91,8 +105,6 @@
 .login-register-form .form-text {
     color: #CCCCCC;
     font-weight: 400;
-    padding-top: 4.06rem;
-    padding-bottom: 1.06rem;
     max-width: 21.37rem;
     text-align: center;
 }
@@ -100,6 +112,15 @@
 .login-register-form .form-text a {
     color: #FFA800;
     text-decoration: none;
+}
+
+.login-register-form .txt-btn-box {
+    padding-top: 4.06rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.06rem;
 }
 
 .login-register-form button {
@@ -181,6 +202,10 @@
 }
 
 @media(max-width: 550px) {
+    .login-register-form {
+        padding-bottom: 5.75rem;
+    }
+    
     .form-logo-box .logo-banner-mobile {
         width: 81vw;
         display: block;
@@ -205,5 +230,15 @@
 
     .login-register-form button {
         font-size: 1.25rem;
+    }
+
+    .login-register-form .form-text {
+        font-size: .875rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .login-register-form {
+        padding: 3.37rem 1.8rem 4rem;
     }
 }

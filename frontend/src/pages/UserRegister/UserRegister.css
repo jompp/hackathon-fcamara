@@ -7,6 +7,10 @@
     align-items: center;
 }
 
+.register-form-page .forgot-login-password {
+    display: none;
+}
+
 @media(max-width: 550px) {
     .login-register-form .form-text {
         display: none;
