@@ -15,6 +15,10 @@
     display: none;
 }
 
+.login-form-page span.not-appearing {
+    display: none;
+}
+
 .login-form-page .txt-btn-box {
     padding-top: 5.13rem;
 }

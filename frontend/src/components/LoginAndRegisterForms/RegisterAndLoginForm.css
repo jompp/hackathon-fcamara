@@ -66,9 +66,19 @@
     background-color: #121214;
 }
 
+.login-register-form .icon-ipt-box.invalid {
+    border: 2px solid #FF3200;
+}
+
 .login-register-form span {
     color: #FFA000;
     font-size: 0.875rem;
+    padding-top: 3px;
+    display: block;
+}
+
+.login-register-form span.invalid {
+    color: #FF3200;
 }
 
 .login-register-form .forgot-login-password {
