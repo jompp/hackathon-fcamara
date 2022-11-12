@@ -4,7 +4,8 @@ main {
 }
 
 .title-content-box h1,
-.title-content-box h3 {
+.title-content-box h3,
+.title-content-box h2 {
     color: #FFA000;
 }
 
@@ -53,4 +54,38 @@ main {
 
 .title-nav-arrows-box button:hover {
     background-color: #D9D9D9;
+}
+
+.module-summary {
+    padding-top: 5.44rem;
+}
+
+.module-summary h2 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #FFA000;
+}
+
+.module-summary .module-lesson-subtitle {
+    color: #FFA000;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: .875rem 0 1.94rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.module-summary .dot {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background-color: #FFA000;
+    border-radius: 100%;
+}
+
+.module-summary .summary-txt {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #D9D9D9;
 }

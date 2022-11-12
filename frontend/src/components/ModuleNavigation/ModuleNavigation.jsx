@@ -13,7 +13,7 @@ export default function ModuleNavigation() {
                 </div>
             </li>
             <li className='open module'>
-
+              
             </li>
         </ol>
     </nav>

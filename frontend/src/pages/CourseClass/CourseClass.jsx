@@ -27,6 +27,11 @@ export default function CourseClass() {
 
 				<VideoClass />
 			</section>
+			<section className='module-summary'>
+				<h2>Sobre o que você vai aprender</h2>
+				<p className='module-lesson-subtitle'>Módulo 2 <span className='dot'></span>Conceitos Básicos</p>
+				<p className='summary-txt'>Neste módulo você vai aprender sobre os conceitos básicos no mundo tech, são diversas linguagens de programação e softwares para que você consiga dar os primeiros passos e desenvolver a sua primeira aplicação, está pronto para seguir nessa jornada? </p>
+			</section>
     </main>
   )
 }
