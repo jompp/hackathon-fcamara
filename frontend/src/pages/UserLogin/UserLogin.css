@@ -11,10 +11,8 @@
     padding-bottom: 4.5rem;
 }
 
-.login-form-page .ipt-err-box.name {
-    display: none;
-}
-
+.login-form-page .ipt-err-box.name,
+.login-form-page .back-to-login-box,
 .login-form-page span.not-appearing {
     display: none;
 }
@@ -23,8 +21,15 @@
     padding-top: 5.13rem;
 }
 
-.login-form-page .back-to-login-box {
-    display: none;
+.login-form-page button.login-error {
+    background-color: #FF3200;
+}
+
+.login-form-page span.login-error {
+    color: #FF3200;
+    font-size: 14px;
+    text-align: start;
+    width: 100%;
 }
 
 @media(max-width: 550px) {
@@ -44,5 +49,10 @@
 
     .login-form-page .form-text {
         display: inline;
+    }
+
+    .login-form-page span.login-error {
+        position: relative;
+        bottom: 49px;
     }
 }

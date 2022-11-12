@@ -236,3 +236,9 @@
         font-size: .875rem;
     }
 }
+
+@media (max-width: 400px) {
+    .login-register-form {
+        padding: 3.37rem 1.8rem 4rem;
+    }
+}

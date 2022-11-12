@@ -64,8 +64,9 @@ export default function Form(props) {
 				
 				<div className='txt-btn-box'>
 					{props.text}
-					<button onClick={handleSubmit(onSubmit)}>{props.textButton}</button>	
+					<button className={props.loginError} onClick={handleSubmit(onSubmit)}>{props.textButton}</button>	
 				</div>
+				{props.loginError ? <span className={props.loginError}>Verifique seus dados e tente novamente</span> : null}
 				
 				<div className='back-to-login-box'>
 					<img src={arrowLeftIcon} alt="Seta para a esquerda" />

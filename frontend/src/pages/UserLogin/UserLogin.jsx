@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import './UserLogin.css'
 
 import * as yup from "yup";
@@ -7,6 +7,8 @@ import api from '../../service/api'
 import Form from '../../components/LoginAndRegisterForms/RegisterAndLoginForm'
 
 export default function UserLogin() {
+  const [areCredencialsWrong, setAreCredencialsWrong] = useState(false)
+
   const sendForm =  userData => {  
     /* const response = await api.post('/api/user', userData)
     console.log(response) */
@@ -24,6 +26,7 @@ export default function UserLogin() {
           password: yup.string().required('Preencha esse campo')
         })}
         onSubmit={sendForm}
+        loginError={areCredencialsWrong ? 'login-error' : null}
 			/>
     </div>
   )
