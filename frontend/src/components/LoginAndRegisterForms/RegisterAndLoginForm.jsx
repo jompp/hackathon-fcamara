@@ -57,7 +57,7 @@ export default function Form(props) {
 							<input {...register("password")} type={showPassword ? 'text' : 'password'} name="password" placeholder='Sua senha'/>
 							<img className='icon eye-slash' src={showPassword ? eyeIcon : eyeSlashIcon} alt="Ícone de cadeado" onClick={() => setShowPassword(!showPassword)}/>
 						</div>
-						<span className={errors.password ? 'invalid' : 'not-appearing'}>A senha deve conter no mínimo 6 dígitos</span>
+						<span className={errors.password ? 'invalid' : 'not-appearing'}>{errors.password?.message || 'A senha deve conter no mínimo 6 dígitos'}</span>
 						<span className='forgot-login-password'>Esqueceu sua senha?</span>
 					</div>
 				</fieldset>

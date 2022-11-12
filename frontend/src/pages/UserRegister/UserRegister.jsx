@@ -26,7 +26,7 @@ export default function UserRegister() {
         yupSchema={yup.object({
           name: yup.string().required('Preencha esse campo'),
           email: yup.string().email('Email inválido').required('Preencha esse campo'),
-          password: yup.string().min(6).required('Preencha esse campo')
+          password: yup.string().min(6, 'A senha deve conter no mínimo 6 dígitos').required('Preencha esse campo')
         })}
         onSubmit={sendForm}
       />
