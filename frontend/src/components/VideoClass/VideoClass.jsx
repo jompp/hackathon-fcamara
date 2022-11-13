@@ -1,8 +1,6 @@
 import React from 'react'
 import './VideoClass.css'
 
-import ModuleNavigation from '../ModuleNavigation/ModuleNavigation'
-
 export default function VideoClass() {
   return (
     <>
@@ -13,7 +11,10 @@ export default function VideoClass() {
       frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
-    />
+    >
+      Seu navegador não tem suporte para esse tipo de conteúdo. Acesse a videoaula através do link:
+      <a href='https://www.youtube.com/embed/zTMvQD5EtJw'>Videoaula</a>
+    </iframe>
     </>
   )
 }
