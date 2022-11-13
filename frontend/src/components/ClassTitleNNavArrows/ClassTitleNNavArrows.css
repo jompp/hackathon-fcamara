@@ -53,6 +53,11 @@
 @media (max-width: 550px) {
     .title-nav-arrows-box h5 {
         font-size: .57rem;
+        margin-right: 1rem;
+    }
+    
+    .title-nav-arrows-box .nav-arrows {
+        gap: .69rem;
     }
 
     .title-nav-arrows-box button {

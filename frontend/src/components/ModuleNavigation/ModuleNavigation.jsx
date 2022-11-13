@@ -26,7 +26,9 @@ export default function ModuleNavigation() {
 
           <div className='module-info-row'>
             <div className='nav-index lesson'>
-              <img src={greyOk} alt="Ícone de ok" />
+              <div className="inner-grey-circle">
+                <img src={greyOk} alt="Ícone de ok" />
+              </div>
             </div>
             <div className='module-name-duration-box '>
                 <a className='module-name' href="#">Introdução</a>
@@ -36,7 +38,9 @@ export default function ModuleNavigation() {
 
           <div className='module-info-row'>
             <div className='nav-index lesson'>
-              <img src={greyOk} alt="Ícone de ok" />
+              <div className="inner-grey-circle">
+                <img src={greyOk} alt="Ícone de ok" />
+              </div>
             </div>
             <div className='module-name-duration-box '>
                 <a className='module-name' href="#">Introdução</a>

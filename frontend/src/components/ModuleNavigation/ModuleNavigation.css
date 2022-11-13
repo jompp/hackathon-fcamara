@@ -42,10 +42,22 @@
 }
 
 .class-nav li .nav-index.lesson {
-    width: 18px;
-    height: 18px;
+    max-width: 18px;
+    max-height: 18px;
     margin-left: 5.5px;
     margin-right: 6px;
+    box-sizing: border-box;
+}
+
+.class-nav .nav-index.lesson .inner-grey-circle {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 1.5px solid #292D32;
+    border-radius: 100%;
 }
 
 .class-nav li .nav-index.not-seen.lesson {
@@ -77,6 +89,32 @@
 }
 
 @media (max-width: 550px) {
+    .class-nav li {
+        padding: .56rem;
+    }
+    
+    .class-nav .module.open {
+        gap: .5rem;
+    }
+
+    .class-nav li .nav-index {
+        width: .875rem;
+        height: .875rem;
+        font-size: .625rem;
+    }
+
+    .class-nav li .nav-index.lesson {
+        width: .53rem;
+        height: .53rem;
+        margin-left: 2.3px;
+        margin-right: 3.7px;
+    }
+
+    .class-nav .nav-index.lesson img {
+        width: 85%;
+        height: 85%;
+    }
+
     .class-nav .module-name {
         font-size: .69rem;
     }
