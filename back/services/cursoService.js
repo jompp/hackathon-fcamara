@@ -43,3 +43,15 @@ exports.getAll = async function(){
 
     }
 }
+
+
+exports.getCursoById = async function (query, page, limit) {
+    try {
+      var curso = Curso.findById(query).select('-password');
+      return curso;
+    } catch (e) {
+      // Log Errors
+      throw Error('Error while Finding Curso');
+    }
+  };
+  

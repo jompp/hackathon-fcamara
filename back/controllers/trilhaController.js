@@ -36,7 +36,6 @@ const addConteudo = async (req,res,next)=>{
        const {id, trilha}=req.body;
     try{
         let trilhaExistente = await TrilhaService.getTrilhaByTitulo({'titulo':trilha});
-        console.log(trilhaExistente)
         if(trilhaExistente.length<=0){
             res.status(400).json({errors:[{msg:'Trilha não existe!'}]})
             return

@@ -10,7 +10,6 @@ const User = require("../models/User");
 const create = async (req,res,next)=>{
     check('titulo','Titulo e obrigatorio').not().isEmpty()
     const data = await authService.decodeToken(req.headers['x-auth-token']);
-console.log(data)
     const errors = validationResult(req)
     if(!errors.isEmpty()){
         return res.status(400).json({errors:errors.array()})
