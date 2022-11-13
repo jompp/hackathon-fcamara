@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const gravatar = require('gravatar');
 const UserService = require('../../back/services/userService');
-
+const CursoService = require('../../back/services/cursoService')
 const create = async (req, res, next) => {
   check('name', 'Name is required').not().isEmpty();
   check('email', 'Informe um email válido').isEmail();
@@ -92,5 +92,25 @@ const deleteUser = async (req, res, next) => {
     return res.status(500).send('Server error');
   }
 };
+const novoCurso = async (req,res,next)=>{
+  const {id_user, id_curso}= req.body;
 
-module.exports = { create, getAll, updateUser, get, deleteUser };
+  try{
+    let curso = await CursoService.getCursoById(id_curso)
+    if(curso){
+      let body = {id_curso:id_curso}
+        let user = await  UserService.novoCurso(id_user, body)
+    
+        res.status(200).json(user)
+        return
+    }else{
+        res.status(400).json({errors:[{msg:'Curso não encontrado!'}]})
+        return
+    }
+  }catch(err){
+      console.error(err.message)
+      res.status(500).send('Server error')
+  }
+}
+
+module.exports = { create, getAll, updateUser, get, deleteUser , novoCurso};

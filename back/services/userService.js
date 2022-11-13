@@ -72,3 +72,26 @@ exports.updateUser = async function (id, body) {
     throw Error('Error while update user');
   }
 };
+
+exports.novoCurso = async function(id, body){
+
+  try{
+    let userAtualizar = new User()
+    userAtualizar  = await User.findById(id);
+    for (const i of userAtualizar.progresso) {
+      
+      if(i?.id_curso == body.id_curso){
+        return "Você já está cadastrado nesse curso!"
+        
+      }else{
+        userAtualizar.progresso = [...userAtualizar.progresso, body]
+        await userAtualizar.save();
+        return "Bons estudos"
+      }
+      
+    }
+  }catch (e) {
+    console.log(e);
+    throw Error('Error while adicionando novo curso ao user');
+  }
+}
