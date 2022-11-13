@@ -7,7 +7,7 @@ const TrilhaSchema = new mongoose.Schema({
    conteudos:{ 
     type:[mongoose.Schema.Types.ObjectId],
     ref:'conteudo'
-},
+}
 })
 
 module.exports = Trilha= mongoose.model('Trilha', TrilhaSchema)

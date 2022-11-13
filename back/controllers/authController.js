@@ -6,7 +6,7 @@ const auth = require('../middleware/auth');
 const config = require('config');
 
 const getAuth = async (req, res, next) => {
-  const authReturn = await auth(req.headers);
+  const authReturn = await auth.autorizar(req.headers);
   try {
     const _id = authReturn.json.id;
     const user = await UserService.getUserById({ _id }, null, null);
@@ -28,7 +28,7 @@ const login = async (req, res, next) => {
   }
   const { email, password } = req.body;
   try {
-    let user = await UserService.getOneUser(email);
+    let user = await UserService.getUserByEmail(email);
     if (!user) {
       res.status(400).json({ errors: [{ msg: 'Credenciais inválidas!' }] });
     }
@@ -48,11 +48,12 @@ const login = async (req, res, next) => {
       config.get('jwtSecret'),
       { expiresIn: 360000 },
       (err, token) => {
+
         if (err) throw err;
-        res.json({ token });
+        res.json({ token }).send('Logged-in user!');
       },
     );
-    res.send('Logged-in user!');
+    // res.json({token}).send('Logged-in user!');
   } catch (e) {
     console.error(e.message);
     res.status(500).send('Server error');

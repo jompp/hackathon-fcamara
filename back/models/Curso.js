@@ -8,7 +8,10 @@ const CursoSchema = new mongoose.Schema({
         type:[mongoose.Schema.Types.ObjectId],
         ref:'trilha'
     },
- 
+    created_by:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'user'
+    }
 })
 
 module.exports = Curso = mongoose.model('Curso', CursoSchema)
