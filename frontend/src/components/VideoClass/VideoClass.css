@@ -1,13 +1,17 @@
-.video-nav-box {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 1.125rem;
-    gap: 2.5rem;
-}
-
-.video-nav-box .yt-video {
+.yt-video {
     background-color: bisque;
     width: 55%;
     height: 428px;
 }
 
+@media (max-width: 1150px) {
+    .yt-video {
+        width: 65%;
+    }
+}
+
+@media (max-width: 900px) {
+    .yt-video {
+        width: 100%;
+    }
+}

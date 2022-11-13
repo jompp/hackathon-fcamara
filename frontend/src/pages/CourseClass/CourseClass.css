@@ -1,6 +1,6 @@
 main {
     background-color: #121214;
-    padding: 5.44rem 1.5rem 12.31rem;
+    padding: 0 1.5rem 12.31rem;
 }
 
 .title-content-box h1,
@@ -13,6 +13,7 @@ main {
 .title-content-box h1 {
     font-size: 2.5rem;
     font-weight: 700;
+    padding-top: 5.44rem;
 }
 
 .title-content-box h3 {
@@ -21,39 +22,11 @@ main {
     padding: .875rem 0 3rem;
 }
 
-.title-nav-arrows-box {
+.video-nav-box {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-.title-nav-arrows-box h5 {
-    background-color: #FFA000;
-    padding: .1rem .5rem .16rem .19rem;
-    border-radius: 0px 10px 10px 0px;
-    color: #292D32;
-    font-size: 1.25rem;
-    font-weight: 700;
-    height: fit-content;
-}
-
-.title-nav-arrows-box .nav-arrows {
-    display: flex;
-    gap: 1.31rem;
-}
-
-.title-nav-arrows-box button {
-    padding: .875rem 1.625rem;
-    background-color: #FFA800;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.title-nav-arrows-box button:hover {
-    background-color: #D9D9D9;
+    padding-top: 1.125rem;
+    gap: 2.5rem;
 }
 
 .module-summary {
@@ -88,4 +61,71 @@ main {
     font-size: 1.5rem;
     font-weight: 400;
     color: #D9D9D9;
+}
+
+.title-nav-arrows-box.mobile {
+    display: none;
+}
+
+.nav-title-box-mobile {
+    flex-grow: 1;
+}
+
+@media (max-width: 900px) {
+    main {
+        padding: 0 1rem 2.94rem;
+    }
+
+    .title-content-box h1 {
+        padding-top: 2.25rem;
+    }
+
+    .title-content-box h3 {
+        padding-bottom: 1.3rem;
+    }
+    
+    .video-nav-box {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .video-title-box {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .title-nav-arrows-box.mobile {
+        display: flex;
+    }
+
+    .module-summary {
+        padding-top: 1.25rem;
+    }
+
+    .module-summary .module-lesson-subtitle {
+        padding: 0 0 .69rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .title-content-box h1 {
+        font-size: 1.5rem;
+    }
+
+    .title-content-box h3 {
+        font-size: 1rem;
+    }
+
+    .module-summary h2 {
+        font-size: .94rem;
+    }
+
+    .module-summary .module-lesson-subtitle {
+        font-size: .625rem;
+    }
+
+    .module-summary .summary-txt {
+        font-size: .75rem;
+    }
 }

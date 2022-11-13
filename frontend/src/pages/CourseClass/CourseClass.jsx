@@ -2,9 +2,8 @@ import React from 'react'
 import './CourseClass.css'
 
 import VideoClass from '../../components/VideoClass/VideoClass'
-
-import LeftArrow from '../../assets/icons/sml-arrow-left.svg'
-import RightArrow from '../../assets/icons/sml-arrow-right.svg'
+import ClassTitleNNavArrows from '../../components/ClassTitleNNavArrows/ClassTitleNNavArrows'
+import ModuleNavigation from '../../components/ModuleNavigation/ModuleNavigation'
 
 export default function CourseClass() {
   return (
@@ -13,20 +12,20 @@ export default function CourseClass() {
 				<h1>Full Stack Developer</h1>
 				<h3>Módulo 2</h3>
 				
-				<div className='title-nav-arrows-box'>
-					<h5>Lifelong Learning</h5>
-					<div className='nav-arrows'>
-						<button>
-							<img src={LeftArrow} alt="Seta para a esquerda" />
-						</button>
-						<button>
-							<img src={RightArrow} alt="Seta para a direita" />
-						</button>
+				<div className='video-title-box'>
+					<ClassTitleNNavArrows />
+					
+					<div className='video-nav-box'>
+						<VideoClass />
+						<div className='nav-title-box-mobile'>
+							<ClassTitleNNavArrows className='title-nav-arrows-box mobile'/>
+							<ModuleNavigation />
+						</div>
 					</div>
+					
 				</div>
-
-				<VideoClass />
 			</section>
+
 			<section className='module-summary'>
 				<h2>Sobre o que você vai aprender</h2>
 				<p className='module-lesson-subtitle'>Módulo 2 <span className='dot'></span>Conceitos Básicos</p>
