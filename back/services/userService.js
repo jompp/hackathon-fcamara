@@ -78,6 +78,13 @@ exports.novoCurso = async function(id, body){
   try{
     let userAtualizar = new User()
     userAtualizar  = await User.findById(id);
+    if(userAtualizar.progresso.length == 0){
+      
+      userAtualizar.progresso = [...userAtualizar.progresso, body]
+      await userAtualizar.save();
+      return "Bons estudos"
+
+    }
     for (const i of userAtualizar.progresso) {
       
       if(i?.id_curso == body.id_curso){

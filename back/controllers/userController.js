@@ -94,14 +94,13 @@ const deleteUser = async (req, res, next) => {
 };
 const novoCurso = async (req,res,next)=>{
   const {id_user, id_curso}= req.body;
-
   try{
     let curso = await CursoService.getCursoById(id_curso)
     if(curso){
       let body = {id_curso:id_curso}
         let user = await  UserService.novoCurso(id_user, body)
     
-        res.status(200).json(user)
+        res.status(200).send(user)
         return
     }else{
         res.status(400).json({errors:[{msg:'Curso não encontrado!'}]})
