@@ -10,4 +10,6 @@ router.put('/:id', userController.updateUser);
 router.get('/:id', userController.get);
 router.delete('/:id', userController.deleteUser);
 router.post('/novoCurso', userController.novoCurso)
+router.post('/check', userController.checkConteudo)
+
 module.exports = router;
