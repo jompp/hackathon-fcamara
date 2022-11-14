@@ -11,9 +11,10 @@
 #comment-main h2 {
     font-style: normal;
     font-weight: 700;
-    font-size: 28px;
+    font-size: 2rem;
     line-height: 42px;
     color: #FFA000;
+    margin: 8px 0px;
     
 }
 
@@ -78,3 +79,13 @@
     margin: 8px 0px;
 
 }
+
+@media only screen and (max-width: 600px) {
+    #comment-message img {
+       display: none;
+     
+    }
+    #comment-main h2 {
+        font-size: 1.1rem;
+    }
+  }
