@@ -1,7 +1,18 @@
 const jwt = require('jsonwebtoken');
 const config = require('config');
+const { head } = require('request');
+const decodeToken = async function(token)
+{
+    
+    try{var data = await jwt.verify(token, process.env.jwtSecret);
+        return data;
+        next()
+    }catch(e){
+        throw Error('Problema ao verificar token!');
 
-module.exports = function(headers){
+    }
+}
+const autorizar = function(headers){
     return new Promise((resolve, reject)=>{
         
 
@@ -27,3 +38,4 @@ return resolve({
         })
     }
 })}
+module.exports ={decodeToken,autorizar}

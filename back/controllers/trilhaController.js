@@ -40,19 +40,22 @@ const addConteudo = async (req,res,next)=>{
             res.status(400).json({errors:[{msg:'Trilha não existe!'}]})
             return
 
-         }else{
+        }else{
             let conteudo = await ConteudoService.getById({'_id':id})
+            console.log(conteudo)
             if(conteudo == null){
                 res.status(400).json({errors:[{msg:'Conteúdo não existe!'}]})
                 return
             }else{
 
-         trilhaAtualizado = await TrilhaService.addConteudo(trilha, id)
+                trilhaAtualizado = await TrilhaService.addConteudo(trilha, conteudo)
                 res.json(trilhaAtualizado)
                 return
-            }   }
-                }catch(err){
-            res.status(500).send('Server error')
+            }   
+        }
+    }catch(err){
+    console.log(err)
+        res.status(500).send('Server error')
                 }
 }
 

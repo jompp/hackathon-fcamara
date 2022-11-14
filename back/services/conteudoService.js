@@ -26,6 +26,7 @@ exports.create = async function (body){
         await conteudo.save();
         return "Conteudo criado!"
     }catch(e){
+        console.log(e)
         throw Error("Error while creating conteudo")
     }
 }

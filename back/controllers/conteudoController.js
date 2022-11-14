@@ -15,10 +15,9 @@ const create = async (req,res,next)=>{
     }
     const {titulo, tipo, origem, duracao, link}=req.body;
     try{
-      
          conteudo = await ConteudoService.create({
             titulo, 
-            tipo, origem, duracao, link
+            tipo, origem,duracao, link
                 })
                 
                 res.status(200).json(conteudo)
