@@ -29,7 +29,7 @@
 }
 
 .module-summary {
-    padding-top: 5.44rem;
+    padding: 5.44rem 0 4.94rem;
 }
 
 .module-summary h2 {
@@ -116,7 +116,12 @@
         font-size: 1rem;
     }
 
+    .module-summary {
+        padding-bottom: .5rem;
+    }
+
     .module-summary h2 {
+        padding-bottom: 0;
         font-size: .94rem;
     }
 

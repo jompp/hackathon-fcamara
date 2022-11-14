@@ -6,6 +6,7 @@ import VideoClass from '../../components/VideoClass/VideoClass'
 import ClassTitleNNavArrows from '../../components/ClassTitleNNavArrows/ClassTitleNNavArrows'
 import ModuleNavigation from '../../components/ModuleNavigation/ModuleNavigation'
 import LoggedUserNavbar from '../../components/LoggedUserNavbar/LoggedUserNavbar'
+import Comment from '../../components/Comment/Comment'
 import dataMock from '../../mock/content.json'
 
 export default function CourseClass() {
@@ -45,6 +46,7 @@ export default function CourseClass() {
 				<p className='module-lesson-subtitle'>Módulo 2 <span className='dot'></span>Conceitos Básicos</p>
 				<p className='summary-txt'>Neste módulo você vai aprender sobre os conceitos básicos no mundo tech, são diversas linguagens de programação e softwares para que você consiga dar os primeiros passos e desenvolver a sua primeira aplicação, está pronto para seguir nessa jornada? </p>
 			</section>
+			<Comment />
 		</main>
 		
 		</>
