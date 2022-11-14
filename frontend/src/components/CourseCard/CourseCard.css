@@ -4,6 +4,7 @@
     gap: 1.31rem;
     border: 1.5px solid #FFA000;
     background-color: #292D32;
+    margin-bottom: 6rem;
 }
 
 .course-card .img-info-box {
@@ -13,7 +14,7 @@
 
 .course-card .img-info-box img {
     width: 556px;
-    height: 315px;
+    height: 344px;
 }
 
 .course-card .img-info-box .title-info-box {
@@ -46,12 +47,19 @@
 }
 
 .course-card .tracking-access-box button {
-    padding: 1rem 6.8rem;
+    padding: 1rem 0;
     background-color: #FFA000;
     font-size: 1.5rem;
     font-weight: 700;
     color: #292D32;
     border-radius: 5px;
     cursor: pointer;
-    position: relative;
+    width: 362px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.course-card .tracking-access-box button:hover {
+    background-color: #D9D9D9;
+} 
