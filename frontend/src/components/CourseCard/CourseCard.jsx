@@ -1,6 +1,8 @@
 import React from 'react'
 import './CourseCard.css'
 
+import ProgressBar from '../ProgressBar/ProgressBar'
+
 export default function CourseCard(props) {
   return (
     <div className='course-card'>
@@ -13,7 +15,8 @@ export default function CourseCard(props) {
         </div>
         <div className='tracking-access-box'>
             <div className='tracking-info'>
-                <p>{props.completionPercentage}</p>
+                <ProgressBar progress={parseInt(props.progressPercentage)}/>
+                <p>{props.progressPercentage}% concluído</p>
                 <p>{props.lastAccess}</p>
             </div>
             <button>{props.btnTxt}</button>

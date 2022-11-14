@@ -21,7 +21,7 @@ export default function UserCursos() {
                 courseInfo={
                     <p>Linguagem de programação;<br/>Lógica de programação e algoritmos;<br/>HTML, CSS e Bootstrap;<br/>HTTP e HTTPS;<br/>E muito mais sobre o universo tech!</p>
                 }
-                completionPercentage='30% concluído'
+                progressPercentage='30'
                 lastAccess='Útimo acesso em 07/11/2022'
                 btnTxt='Acessar'
             />
@@ -35,7 +35,7 @@ export default function UserCursos() {
                 courseInfo={
                     <p>Bancos de dados;<br/>Automação de testes;<br/>Qualidade de software;<br/>Github;<br/>Aproveite e veja a vida sem bugs depois!</p>
                 }
-                completionPercentage='0% concluído'
+                progressPercentage='0'
                 btnTxt='Iniciar trilha'
             />
 
@@ -46,7 +46,7 @@ export default function UserCursos() {
                 courseInfo={
                     <p>Teoria das cores;<br/>Protótipo para testes;<br/>Avaliação comparativa;<br/>Como realizar pesquisas;<br/>E muito mais sobre designer e usuários!</p>
                 }
-                completionPercentage='0% concluído'
+                progressPercentage='0'
                 btnTxt='Iniciar trilha'
             />
         </section>
