@@ -3,19 +3,60 @@ main {
     background-color: #121214;
 }
 
-main h2,
-main h3 {
+h2, h3 {
     color: #FFA000;
     font-weight: 700;
 }
 
-main h2 {
+h2 {
     font-size: 3rem;
     font-weight: 700;
     padding-bottom: 3.31rem;
 }
 
-main h3 {
+h3 {
     font-size: 2.25rem;
     padding-bottom: 1.25rem;
+}
+
+@media (max-width: 870px) { 
+    h2 {
+        font-size: 2.6rem;
+        font-weight: 700;
+        padding-bottom: 3.31rem;
+    }
+    
+    h3 {
+        font-size: 1.9rem;
+        padding-bottom: 1.25rem;
+    }
+}
+
+@media (max-width: 740px) {
+    h3 {
+        display: none;
+    }
+
+    .courses-grid-mobile {
+        display: flex;
+        gap: 1.56rem;
+        overflow-x: scroll;
+        margin-bottom: 5rem;
+        padding-bottom: 1rem;
+    }
+}
+
+@media (max-width: 580px) {
+    main {
+        padding: 2.438rem 1rem 5.06rem;
+    }
+
+    .courses-grid-mobile {
+        margin-bottom: 1.44rem;   
+    }
+
+    h2 {
+        font-size: 1rem;
+        padding-bottom: 1.313rem;
+    }
 }

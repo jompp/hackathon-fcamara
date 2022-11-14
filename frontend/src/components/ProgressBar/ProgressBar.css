@@ -1,10 +1,11 @@
 .ProgressRoot {
   overflow: hidden;
   background-color: #D9D9D9;
-  width: 343px;
+  width: 503px;
   height: 9px;
   transform: translateZ(0);
   margin-bottom: .56rem;
+  border-radius: 5px;
 }
 
 .ProgressIndicator {
@@ -12,4 +13,26 @@
   width: 100%;
   height: 100%;
   transition: transform 660ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+
+@media (max-width: 1040px) {
+    .ProgressRoot {
+        width: 300px;
+    }
+}
+
+@media (max-width: 740px) {
+    .ProgressRoot {
+        width: 100%;
+    }
+}
+
+@media (max-width: 580px) {
+    .ProgressRoot {
+        width: 157px;
+        height: 4px;
+        margin: auto;
+        margin-bottom: .25rem;
+    } 
 }
