@@ -38,3 +38,49 @@ header .search-box input {
     font-size: 1.25rem;
     color: #FFFFFF;
 }
+
+header .mobile-search-icon {
+    display: none;
+}
+
+@media (max-width: 1130px) {
+    header .nav-items {
+        gap: 3rem;
+    }
+
+    header .search-box {
+        width: 35vw;
+    }
+}
+
+@media (max-width: 780px) {
+    header .search-box,
+    header nav.nav-items,
+    header .profile-pic {
+        display: none;
+    }
+
+    header .mobile-search-icon {
+        display: block;
+    }
+}
+
+@media (max-width: 550px) {
+    header {
+        padding: .5rem .625rem;
+    }
+
+    header .logo {
+        width: 50px;
+        height: 37px;
+    }
+
+    header .nav-items {
+        gap: 2.5rem;
+    }
+
+    header .nav-items .mobile-search-icon {
+        width: 20px;
+        height: 20px;
+    }
+}

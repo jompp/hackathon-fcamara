@@ -1,6 +1,8 @@
 import React from 'react'
 import './LoggedUserNavbar.css'
 
+import DropdownMenu from './DropdownMenu/DropdownMenu'
+
 import HeaderLogo from '../../assets/images/header-logo.svg'
 import SearchIcon from '../../assets/icons/search.svg'
 import BookIcon from '../../assets/icons/book.svg'
@@ -10,13 +12,14 @@ import ProfilePhoto from '../../assets/images/profile-photo-example.jpg'
 export default function LoggedUserNavbar() {
   return (
     <header>
-      <img className='original-size-img' src={HeaderLogo} alt="Logo Orange Juice" />
+      <img className='original-size-img logo' src={HeaderLogo} alt="Logo Orange Juice" />
 
       <div className='nav-items'>
         <div className='search-box'>
           <input type="text" />
           <img src={SearchIcon} alt="Lupa" />
         </div>
+        <img className='mobile-search-icon' src={SearchIcon} alt="Lupa" />
 
         <nav className='nav-items'>
           <a href="#">
@@ -27,7 +30,8 @@ export default function LoggedUserNavbar() {
           </a>
         </nav>
         
-        <img className='original-size-img' src={ProfilePhoto} alt="Perfil ícone menu" />
+        <img className='original-size-img profile-pic' src={ProfilePhoto} alt="Perfil ícone menu" />
+        <DropdownMenu />
       </div>
     </header>
   )
