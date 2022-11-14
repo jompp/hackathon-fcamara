@@ -9,6 +9,10 @@
     padding-right: 1.875rem;
 }
 
+.course-card .course-title-mobile {
+    display: none;
+}
+
 .course-card .img-info-box {
     display: flex;
     gap: 2.06rem;
@@ -103,6 +107,10 @@
         margin-bottom: 0;
     }
 
+    .course-card .img-info-box .course-title-mobile {
+        display: block;
+    }    
+
     .course-card .img-info-box {
         flex-direction: column;
         gap: .5rem;
@@ -126,7 +134,8 @@
     }
 
     .course-card .img-info-box h4 {
-        padding-bottom: .5rem;
+        padding-bottom: 0;
+        display: none;
     }
 
     .course-card .tracking-info {
@@ -136,12 +145,17 @@
     .course-card .tracking-access-box {
         padding: 0;
         flex-direction: column;
+        align-items: start;
         width: 100%;
     }
 
     .course-card .tracking-info {
         padding: 0;
         padding-bottom: 1rem;
+    }
+
+    .course-card .tracking-access-box button {
+        align-self: center;
     }
 }
 
