@@ -7,6 +7,11 @@ import CourseCard from '../../components/CourseCard/CourseCard'
 import FsCourseImg from '../../assets/images/fs-course.jpg'
 import QaCourseImg from '../../assets/images/qa-course.jpg'
 import UxCourseImg from '../../assets/images/ux-course.jpg'
+import LogoFcamara from '../../assets/images/Logo-FCamara.jpg'
+import LogoTt from '../../assets/images/tt-logo.svg'
+import LogoInsta from '../../assets/images/insta-logo.svg'
+import LogoDiscord from '../../assets/images/yellow-disc-logo.svg'
+import LogoYt from '../../assets/images/yt-logo.svg'
 
 export default function UserCursos() {
   return (
@@ -55,6 +60,26 @@ export default function UserCursos() {
             </div>
         </section>
     </main>
+    <footer>
+        <h2>Apoio</h2>
+        <div className='supporters-box'>
+            <a className='fcamara-link' href="https://digital.fcamara.com.br/orangejuice">
+                <img src={LogoFcamara} alt="Fcamara Logo" />
+            </a>
+            <a href="https://twitter.com/orangejuice">
+                <img src={LogoTt} alt="Twitter Logo" />
+            </a>
+            <a href="https://www.instagram.com/orangejuicetech/">
+                <img src={LogoInsta} alt="Instagram Logo" />
+            </a>
+            <a href="https://discord.com/invite/NtESsDFGx5">
+                <img src={LogoDiscord} alt="Discord Logo" />
+            </a>
+            <a href="https://www.youtube.com/c/OrangeJuicefc">
+                <img src={LogoYt} alt="Youtube Logo" />
+            </a>
+        </div>
+    </footer>
     </>
   )
 }
