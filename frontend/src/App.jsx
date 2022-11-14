@@ -13,7 +13,7 @@ return (
 		<Routes>
 			<Route path='/cadastro' element={<UserRegister />} />
 			<Route path='/login' element={<UserLogin />} />
-			<Route path='/aula' element={<CourseClass />} />
+			<Route path='/aula/:id' element={<CourseClass />} />
 			<Route path='/cursos' element={<UserCursos />} />
 		</Routes>
 	</BrowserRouter>

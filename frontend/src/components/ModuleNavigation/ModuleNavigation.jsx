@@ -25,7 +25,7 @@ export default function ModuleNavigation() {
                 <p className='content-type-n-duration'>Conteúdo Misto <span className='dot'></span>{module.ch}</p>
             </div>
           </div>
-        
+          
           <OpenModuleContent module={module}/>
         </li>
       </ol>

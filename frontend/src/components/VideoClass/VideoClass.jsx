@@ -1,19 +1,19 @@
 import React from 'react'
 import './VideoClass.css'
 
-export default function VideoClass() {
+export default function VideoClass(props) {
   return (
     <>
     <iframe 
       className='yt-video' 
-      src="https://www.youtube.com/embed/zTMvQD5EtJw" 
-      title="📢 Orange Juice Cast #04 - Qual a melhor linguagem de programação? | Com Willian da Silva"
-      frameborder="0"
+      src={props.url} 
+      title={props.title}
+      frameBorder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
+      allowFullScreen
     >
       Seu navegador não tem suporte para esse tipo de conteúdo. Acesse a videoaula através do link:
-      <a href='https://www.youtube.com/embed/zTMvQD5EtJw'>Videoaula</a>
+      <a href={props.url}>Videoaula</a>
     </iframe>
     </>
   )
