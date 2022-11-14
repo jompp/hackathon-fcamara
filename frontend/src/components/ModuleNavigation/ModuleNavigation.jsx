@@ -1,10 +1,12 @@
 import React from 'react'
 import './ModuleNavigation.css'
 
-import greyOk from '../../assets/icons/grey-ok.svg'
-import whiteOk from '../../assets/icons/white-ok.svg'
+import dataMock from '../../mock/content.json'
+import OpenModuleContent from './subComponents/OpenModuleContent'
 
 export default function ModuleNavigation() {
+  const module = dataMock.fs_course.modules[1]
+
   return (
     <nav className='class-nav'>
       <ol>
@@ -19,44 +21,12 @@ export default function ModuleNavigation() {
           <div className='module-info-row'>
             <span className='nav-index'>2</span>
             <div className='module-name-duration-box'>
-                <a className='module-name' href="#">Introdução</a>
-                <p className='content-type-n-duration'>Conteúdo Misto <span className='dot'></span>1h20</p>
+                <a className='module-name' href="#">{module.title}</a>
+                <p className='content-type-n-duration'>Conteúdo Misto <span className='dot'></span>{module.ch}</p>
             </div>
           </div>
-
-          <div className='module-info-row'>
-            <div className='nav-index lesson'>
-              <div className="inner-grey-circle">
-                <img src={greyOk} alt="Ícone de ok" />
-              </div>
-            </div>
-            <div className='module-name-duration-box '>
-                <a className='module-name' href="#">Introdução</a>
-                <p className='content-type-n-duration'>Conteúdo Misto <span className='dot'></span>1h20</p>
-            </div>
-          </div>
-
-          <div className='module-info-row'>
-            <div className='nav-index lesson'>
-              <div className="inner-grey-circle">
-                <img src={greyOk} alt="Ícone de ok" />
-              </div>
-            </div>
-            <div className='module-name-duration-box '>
-                <a className='module-name' href="#">Introdução</a>
-                <p className='content-type-n-duration'>Conteúdo Misto <span className='dot'></span>1h20</p>
-            </div>
-          </div>
-
-          <div className='module-info-row'>
-            <div className='nav-index not-seen lesson'>
-              <img src={whiteOk} alt="Ícone de ok" />
-            </div>
-            <div className='module-name-duration-box '>
-                <a className='module-name' href="#">Introdução</a>
-                <p className='content-type-n-duration'>Conteúdo Misto <span className='dot'></span>1h20</p>
-            </div>
-          </div>
+        
+          <OpenModuleContent module={module}/>
         </li>
       </ol>
     </nav>

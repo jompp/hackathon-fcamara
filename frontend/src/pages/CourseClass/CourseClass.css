@@ -1,6 +1,6 @@
-main {
+.class-content {
     background-color: #121214;
-    padding: 0 1.5rem 12.31rem;
+    padding: 5.44rem 1.5rem 12.31rem;
 }
 
 .title-content-box h1,
@@ -13,7 +13,6 @@ main {
 .title-content-box h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    padding-top: 5.44rem;
 }
 
 .title-content-box h3 {
@@ -72,7 +71,7 @@ main {
 }
 
 @media (max-width: 900px) {
-    main {
+    .class-content {
         padding: 0 1rem 2.94rem;
     }
 

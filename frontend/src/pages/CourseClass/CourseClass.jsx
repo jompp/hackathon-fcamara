@@ -4,9 +4,12 @@ import './CourseClass.css'
 import VideoClass from '../../components/VideoClass/VideoClass'
 import ClassTitleNNavArrows from '../../components/ClassTitleNNavArrows/ClassTitleNNavArrows'
 import ModuleNavigation from '../../components/ModuleNavigation/ModuleNavigation'
+import LoggedUserNavbar from '../../components/LoggedUserNavbar/LoggedUserNavbar'
 
 export default function CourseClass() {
   return (
+	<>
+	<LoggedUserNavbar />
     <main className='class-content'>
 			<section className='title-content-box'>
 				<h1>Full Stack Developer</h1>
@@ -32,5 +35,7 @@ export default function CourseClass() {
 				<p className='summary-txt'>Neste módulo você vai aprender sobre os conceitos básicos no mundo tech, são diversas linguagens de programação e softwares para que você consiga dar os primeiros passos e desenvolver a sua primeira aplicação, está pronto para seguir nessa jornada? </p>
 			</section>
     </main>
+	
+	</>
   )
 }

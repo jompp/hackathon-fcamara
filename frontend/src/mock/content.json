@@ -1,0 +1,77 @@
+ {
+    "fs_course": {
+        "modules": [
+            {
+                "title": "O início",
+				"ch": "3:30:00",
+                "content": [
+                    {
+						"title": "Metodologia Ágil",
+						"duration": "57:52",
+						"link": "https://www.youtube.com/embed/TmTupAe14T4",
+						"origin": "Orange Juice"
+                    },
+					{
+						"title": "Culture Code",
+						"duration": "01:22:25",
+						"link": "https://www.youtube.com/embed/n0KH8dQSrv0",
+						"origin": "Grupo FCamara"
+                    },
+					{
+						"title": "Desenvolvimento",
+						"duration": "01:25:20",
+						"link": "https://www.youtube.com/embed/N78-5gHLzbE",
+						"origin": "Grupo FCamara"
+                    },
+					{
+						"title": "Trabalho em equipe",
+						"duration": "59:48",
+						"link": "https://www.youtube.com/embed/gG0zZoj595U",
+						"origin": "Grupo FCamara"
+                    },
+					{
+						"title": "LGPD",
+						"duration": "01:01:31",
+						"link": "https://www.youtube.com/embed/KKLDwHyQATA",
+						"origin": "Orange Juice"
+                    }
+                ]
+            },
+			{
+                "title": "Conceitos básicos",
+				"ch": "5:00:00",
+                "content": [
+                    {
+						"title": "Qual a melhor linguagem de programação? | Com Willian da Silva",
+						"duration": "51:06",
+						"link": "https://www.youtube.com/embed/zTMvQD5EtJw",
+						"origin": "Orange Juice",
+						"attended": true
+                    },
+					{
+						"title": "Habilidades além do código! | Com Mateus Oliveira",
+						"duration": "45:01",
+						"link": "https://www.youtube.com/embed/Mmukepu3yRs",
+						"origin": "Orange Juice",
+						"attended": true
+                    },
+					{
+						"title": "Dúvidas sobre carreira",
+						"duration": "57:54",
+						"link": "https://www.youtube.com/embed/bZQx1oHMbHg",
+						"origin": "Orange Juice",
+						"attended": false
+                    },
+					{
+						"title": "Versionamento",
+						"duration": "59:48",
+						"link": "https://www.youtube.com/embed/9k_lIYuRtg8",
+						"origin": "Orange Juice",
+						"attended": false
+                    }
+                ]
+
+            }
+        ]
+    }
+}

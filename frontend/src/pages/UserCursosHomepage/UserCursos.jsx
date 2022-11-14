@@ -17,7 +17,7 @@ export default function UserCursos() {
   return (
     <>
     <LoggedUserNavbar />
-    <main>
+    <main className='homepage-cursos'>
         <section className='continue-the-course'>
             <h2>Continue de onde parou</h2>
             <div className='courses-grid-mobile'>
@@ -60,7 +60,7 @@ export default function UserCursos() {
             </div>
         </section>
     </main>
-    <footer>
+    <footer className='homepage-cursos-footer'>
         <h2>Apoio</h2>
         <div className='supporters-box'>
             <a className='fcamara-link' href="https://digital.fcamara.com.br/orangejuice">
