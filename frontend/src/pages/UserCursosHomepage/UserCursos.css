@@ -1,0 +1,15 @@
+main {
+    padding: 5.19rem 1.94rem 6.875rem;
+    background-color: #121214;
+}
+
+main h2,
+main h3 {
+    color: #FFA000;
+}
+
+main h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    padding-bottom: 3.31rem;
+}

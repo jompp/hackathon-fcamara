@@ -1,0 +1,57 @@
+.course-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.31rem;
+    border: 1.5px solid #FFA000;
+    background-color: #292D32;
+}
+
+.course-card .img-info-box {
+    display: flex;
+    gap: 2.06rem;
+}
+
+.course-card .img-info-box img {
+    width: 556px;
+    height: 315px;
+}
+
+.course-card .img-info-box .title-info-box {
+    padding-top: 2.44rem;
+}
+
+.course-card .img-info-box h4 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #FFA000;
+    padding-bottom: 1.125rem;
+}
+
+.course-card .img-info-box p {
+    font-size: 1.625rem;
+    font-weight: 400;
+    color: #E6EAEE;
+}
+
+.course-card .tracking-access-box {
+    padding: 0 1.69rem 1.875rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-card .tracking-access-box p {
+    color: #DDDDDD;
+    font-weight: 400;
+}
+
+.course-card .tracking-access-box button {
+    padding: 1rem 6.8rem;
+    background-color: #FFA000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #292D32;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
