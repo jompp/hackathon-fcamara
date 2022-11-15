@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { redirect, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import './UserRegister.css'
 
 import * as yup from "yup";
@@ -32,7 +32,7 @@ export default function UserRegister() {
     <main className='register-form-page'>
       <Form 
         formLegend='Crie sua conta'
-        text={<p className='form-text'>Ao se registrar, você aceita nossos <a href='#'>termos de uso</a> e a nossa <a href="#">política de privacidade</a>.</p>}
+        text={<p className='form-text'>Ao se registrar, você aceita nossos <a className='link' href='#'>termos de uso</a> e a nossa <a className='link' href="#">política de privacidade</a>.</p>}
         textButton={waitingResponse ? <LoadingCircle /> : 'Cadastrar'}
         yupSchema={yup.object({
           name: yup.string().required('Preencha esse campo'),

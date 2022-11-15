@@ -109,7 +109,7 @@
     text-align: center;
 }
 
-.login-register-form .form-text a {
+.login-register-form .form-text .link {
     color: #FFA800;
     text-decoration: none;
 }
@@ -161,7 +161,7 @@
     animation: go-back .6s alternate infinite;
 }
 
-.login-register-form .back-to-login-box a {
+.login-register-form .back-to-login-box .back-to-login.link {
     color: #BBBBBB;
     text-decoration: none;
 }

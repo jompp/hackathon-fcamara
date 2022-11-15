@@ -12,6 +12,7 @@ import eyeIcon from '../../assets/icons/eye.svg'
 import arrowLeftIcon from '../../assets/icons/arrow-left.svg'
 import logo from '../../assets/images/logo.png'
 import logoBanner from '../../assets/images/logo-banner.png'
+import { Link } from 'react-router-dom';
 
 export default function Form(props) {
 	const { register, handleSubmit, formState:{ errors } } = useForm({
@@ -70,7 +71,7 @@ export default function Form(props) {
 				
 				<div className='back-to-login-box'>
 					<img src={arrowLeftIcon} alt="Seta para a esquerda" />
-					<a href="#">Voltar para o login</a>
+					<Link to='/login' className='back-to-login link'>Voltar para o login</Link>
 				</div>
 			</form>
 		</section>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './UserLogin.css'
 
 import * as yup from "yup";
@@ -34,7 +34,7 @@ export default function UserLogin() {
     <main className='login-form-page'>
 			<Form
 				formLegend='Faça seu login'
-				text={<p className='form-text'>Não tem conta? <a href='/cadastro'>Crie sua conta.</a></p>}
+				text={<p className='form-text'>Não tem conta? <Link to='/cadastro' className='link'>Crie sua conta.</Link></p>}
         textButton={waitingResponse ? <LoadingCircle /> : 'Entrar'}
         yupSchema={yup.object({
           email: yup.string().required('Preencha esse campo'),
