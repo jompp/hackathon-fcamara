@@ -22,6 +22,7 @@ const login = async (req, res, next) => {
     check('email', 'Informe um email válido').isEmail(),
     check('password', 'Digite sua senha').exists,
   );
+
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -45,12 +46,11 @@ const login = async (req, res, next) => {
     };
     jwt.sign(
       payload,
-      config.get('jwtSecret'),
+      process.env.JWT_SECRET,
       { expiresIn: 360000 },
       (err, token) => {
-
         if (err) throw err;
-        res.json({ token }).send('Logged-in user!');
+        return res.json({ token }).send('Logged-in user!');
       },
     );
     // res.json({token}).send('Logged-in user!');
