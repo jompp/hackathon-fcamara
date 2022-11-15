@@ -14,11 +14,18 @@ export default function UserRegister() {
 
   const sendForm = async userData => {
     setWaitingResponse(true)  
-    const response = await api.post('/api/user', userData)
-    console.log(response)
-    navigate('/cursos')
-    setWaitingResponse(false)
-
+    try {
+      const response = await api.post('/api/user', userData)
+      console.log(response)
+      navigate('/cursos')
+    } catch(e) {
+      if(e.response.status === 400) {
+        alert('Esse usuário já existe')
+      } else {
+        alert("Ops, alguma coisa deu errado. Tente novamente mais tarde.")
+      }
+    }
+    setWaitingResponse(false) 
   }
 
   return (

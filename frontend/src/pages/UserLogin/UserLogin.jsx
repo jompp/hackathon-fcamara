@@ -9,10 +9,11 @@ import Form from '../../components/LoginAndRegisterForms/RegisterAndLoginForm'
 export default function UserLogin() {
   const [areCredencialsWrong, setAreCredencialsWrong] = useState(false)
 
-  const sendForm =  userData => {  
-    /* const response = await api.post('/api/user', userData)
-    console.log(response) */
+  const sendForm = async userData => { 
+    delete userData.name 
     console.log(userData) 
+    const response = await api.post('/api/auth', userData)
+    console.log(response)
   }
 	
 	return (
