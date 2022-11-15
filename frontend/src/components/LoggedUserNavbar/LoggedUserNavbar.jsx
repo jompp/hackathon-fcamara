@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './LoggedUserNavbar.css'
 
 import DropdownMenu from './DropdownMenu/DropdownMenu'
@@ -12,7 +13,9 @@ import ProfilePhoto from '../../assets/images/profile-photo-example.jpg'
 export default function LoggedUserNavbar() {
   return (
     <header>
-      <img className='original-size-img logo' src={HeaderLogo} alt="Logo Orange Juice" />
+      <Link to='/cursos'>
+        <img className='original-size-img logo' src={HeaderLogo} alt="Logo Orange Juice" />
+      </Link>
 
       <div className='nav-items'>
         <div className='search-box'>
