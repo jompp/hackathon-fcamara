@@ -8,7 +8,7 @@ const ProgressBar = (props) => {
     useEffect(() => {
         const timer = setTimeout(() => setProgress(props.progress), 400);
         return () => clearTimeout(timer);
-    }, []);
+    }, [props.progress]);
 
 
     return (

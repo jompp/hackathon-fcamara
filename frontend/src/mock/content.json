@@ -1,5 +1,6 @@
  {
     "fs_course": {
+		"progress_percentage": "30",
         "modules": [
             {
                 "title": "O início",
@@ -73,5 +74,11 @@
 
             }
         ]
-    }
+    },
+	"qa_course": {
+
+	},
+	"ux_course": {
+
+	}
 }
