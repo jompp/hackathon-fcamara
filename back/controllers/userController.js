@@ -20,7 +20,7 @@ const create = async (req, res, next) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { name, email, password } = req.body;
+  const { name, email, password, admin } = req.body;
   try {
     let user = await UserService.userExists(email);
     if (user) {
@@ -39,6 +39,7 @@ const create = async (req, res, next) => {
       email,
       avatar,
       password,
+      admin
     });
     return res.json(user);
     // const payload = {

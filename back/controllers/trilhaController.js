@@ -3,8 +3,11 @@ const jwt = require('jsonwebtoken')
 const config = require("config");
 const TrilhaService = require('../services/trilhaService')
 const ConteudoService = require('../services/conteudoService')
+const auth = require('../middleware/auth');
 
 const create = async (req,res,next)=>{
+    const isAdmin = await auth.isAdmin(req.headers['x-auth-token'])
+    if(isAdmin == true){
     check('titulo','Titulo e obrigatorio').not().isEmpty()
     
     const errors = validationResult(req)
@@ -26,10 +29,15 @@ const create = async (req,res,next)=>{
                 }catch(err){
             console.error(err.message)
             res.status(500).send('Server error')
+                }}else{
+                    res.status(400).send('Apenas admin pode criar trilha')
+
                 }
 }
 
 const addConteudo = async (req,res,next)=>{
+    const isAdmin = await auth.isAdmin(req.headers['x-auth-token'])
+    if(isAdmin == true){
     check('id',
     'Por favor,ids com 12 caracteres minímo')
     .isLength({min:6}) 
@@ -56,6 +64,9 @@ const addConteudo = async (req,res,next)=>{
     }catch(err){
     console.log(err)
         res.status(500).send('Server error')
+                }}else{
+                    res.status(400).send('Apenas admin pode relacionar conteúdo e trilha')
+
                 }
 }
 
