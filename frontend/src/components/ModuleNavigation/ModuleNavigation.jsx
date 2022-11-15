@@ -13,7 +13,7 @@ export default function ModuleNavigation() {
         <li className='module-info-row'>
           <span className='nav-index'>1</span>
           <div className='module-name-duration-box'>
-              <a className='module-name' href="#">Introdução</a>
+              <a className='module-name' href="#">O início</a>
               <p className='content-type-n-duration'>Conteúdo Misto <span className='dot'></span>1h20</p>
           </div>
         </li>
@@ -25,7 +25,7 @@ export default function ModuleNavigation() {
                 <p className='content-type-n-duration'>Conteúdo Misto <span className='dot'></span>{module.ch}</p>
             </div>
           </div>
-          
+
           <OpenModuleContent module={module}/>
         </li>
       </ol>
