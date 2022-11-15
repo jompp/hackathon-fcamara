@@ -1,7 +1,7 @@
 const express = require('express');
 const connectDB = require('./config/db');
 require('dotenv/config')
-var cors = require('cors');
+const cors = require('cors');
 
 var swaggerJsdoc = require("swagger-jsdoc");
 var swaggerUi = require("swagger-ui-express");
@@ -13,8 +13,8 @@ const app = express();
 connectDB();
 //Init Middleware
 app.use(express.json({extended:false}));
-app.use(cors({ origin: 'https://localhost:5000/api' , credentials :  true,  
-methods: 'GET,PUT,POST,OPTIONS', allowedHeaders: 'Content-Type,Authorization' }));
+app.use(cors({ origin: process.env.CLIENT_URL, credentials :  true,  
+methods: 'GET,PUT,POST,OPTIONS', allowedHeaders: 'Content-Type,Authorization'}));
 app.get('/', (req,res)=> res.send('API Running'));
 app.use('/api/user', require('./routes/api/user'))
 app.use('/api/auth', require('./routes/api/auth'))

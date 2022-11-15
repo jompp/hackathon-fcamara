@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 const config = require('config');
+require('dotenv/config')
 
 const getAuth = async (req, res, next) => {
   const authReturn = await auth.autorizar(req.headers);
@@ -51,7 +52,7 @@ const login = async (req, res, next) => {
     };
     jwt.sign(
       payload,
-      config.get('jwtSecret'),
+      process.env.JWT_SECRET,
       { expiresIn: 360000 },
       (err, token) => {
 
