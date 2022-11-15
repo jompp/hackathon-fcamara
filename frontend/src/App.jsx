@@ -18,7 +18,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-        <Route path='/' element={<UserLogin />} />
+        		<Route path='/' element={<UserLogin />} />
 				<Route path='/cadastro' element={<UserRegister />} />
 				<Route path='/aula/:id' element={<CourseClass />} />
 				<Route path='/cursos' element={<UserCursos />} />
