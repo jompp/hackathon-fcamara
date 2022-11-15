@@ -35,6 +35,43 @@ const create = async (req,res,next)=>{
             }
 
 }
+const getAll = async (req, res, next) => {
+  try {
+    let conteudos = await ConteudoService.getAll();
+    return res.status(200).json(conteudos);
+  } catch (err) {
+    res.status(500).send('Server error');
+  }
+};
 
+const deleteConteudo = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    let conteudos = await ConteudoService.deleteConteudo(id);
+    return res.status(200).json(conteudos);
+  } catch (err) {
+    res.status(500).send('Server error');
+  }
+};
+const atualizarConteudo = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { body } = req;
+    let conteudos = await ConteudoService.atualizarConteudo(id, body);
+    return res.status(200).json(conteudos);
+  } catch (err) {
+    res.status(500).send('Server error');
+  }
+};
 
-module.exports ={create}
+const getOne = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    let conteudos = await ConteudoService.getOneConteudo({ _id: id });
+    return res.status(200).json(conteudos);
+  } catch (err) {
+    res.status(500).send('Server error');
+  }
+};
+
+module.exports = { create, getAll, deleteConteudo, atualizarConteudo, getOne };

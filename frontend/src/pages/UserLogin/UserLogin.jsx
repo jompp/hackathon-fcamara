@@ -19,7 +19,14 @@ export default function UserLogin() {
     try {
       const response = await api.post('/api/auth', userData)
       console.log(response)
-      navigate('/cursos')
+      if(response.data.user.admin){
+        delete response.data.user.password;
+        localStorage.clear();
+        localStorage.setItem('@FCAMARA_USER', JSON.stringify(response.data.user));
+        navigate('/admin', {replace: true})
+      } else {
+        navigate('/cursos', {replace: true})
+      }
     } catch(e) {
       if(e.response.status === 400) {
         setAreCredencialsWrong(true)

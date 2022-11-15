@@ -73,49 +73,26 @@ exports.updateUser = async function (id, body) {
   }
 };
 
-exports.novoCurso = async function(id, body){
-
-  try{
-    let userAtualizar = new User()
-    userAtualizar  = await User.findById(id);
-    if(userAtualizar.cursos.length == 0){
-      
-      userAtualizar.cursos = [...userAtualizar.cursos, body]
+exports.novoCurso = async function (id, body) {
+  try {
+    let userAtualizar = new User();
+    userAtualizar = await User.findById(id);
+    if (userAtualizar.progresso.length == 0) {
+      userAtualizar.progresso = [...userAtualizar.progresso, body];
       await userAtualizar.save();
-      return "Bons estudos"
-
+      return 'Bons estudos';
     }
-    for (const i of userAtualizar.cursos) {
-      
-      if(i?.id_curso == body.id_curso){
-        return "Você já está cadastrado nesse curso!"
-        
-      }else{
-        userAtualizar.curso = [...userAtualizar.cursos, body]
+    for (const i of userAtualizar.progresso) {
+      if (i?.id_curso == body.id_curso) {
+        return 'Você já está cadastrado nesse curso!';
+      } else {
+        userAtualizar.progresso = [...userAtualizar.progresso, body];
         await userAtualizar.save();
-        return "Bons estudos"
+        return 'Bons estudos';
       }
-      
     }
-  }catch (e) {
+  } catch (e) {
     console.log(e);
     throw Error('Error while adicionando novo curso ao user');
   }
-}
-
-exports.check = async function(id, body){
-  try{
-    let bodyUpdate = {
-      id_conteudo:body,
-      check:true
-    }
-    let userAtualizar = new User()
-    userAtualizar  = await User.findById(id);
-    userAtualizar.progresso = [...userAtualizar.progresso, bodyUpdate]
-    await userAtualizar.save();
-    return "Você está indo bem! "
-  }catch (e) {
-    console.log(e);
-    throw Error('Error while adicionando check ao seu conteudo');
-  }
-}
+};

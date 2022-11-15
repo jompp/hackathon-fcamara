@@ -1,0 +1,26 @@
+.conatiner-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.trilha-item {
+    color: #FFA000;
+    border: 2px solid #FFA000;
+    border-radius: 8px;
+    background-color: #292D32;
+    padding: 5px 16px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+.trilha-item h3 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.trilha-item img {
+    filter: contrast(0.5);
+}

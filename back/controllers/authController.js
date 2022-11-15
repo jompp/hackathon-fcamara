@@ -4,13 +4,13 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 const config = require('config');
-require('dotenv/config')
+require('dotenv/config');
 
 const getAuth = async (req, res, next) => {
   const authReturn = await auth.autorizar(req.headers);
-  if(authReturn.status == 401){
-    res.status(401).send(authReturn.error)
-    return
+  if (authReturn.status == 401) {
+    res.status(401).send(authReturn.error);
+    return;
   }
   try {
     const _id = authReturn.json.id;
@@ -27,6 +27,7 @@ const login = async (req, res, next) => {
     check('email', 'Informe um email válido').isEmail(),
     check('password', 'Digite sua senha').exists,
   );
+
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -36,32 +37,30 @@ const login = async (req, res, next) => {
     let user = await UserService.getUserByEmail(email);
     if (!user) {
       res.status(400).json({ errors: [{ msg: 'Credenciais inválidas!' }] });
-      return
+      return;
     }
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-       res
-        .status(400)
-        .json({ erros: [{ mdg: 'Credenciais inválidas!' }] });
-      return
-      }else{
-    const payload = {
-      user: {
-        id: user.id,
-      },
-    };
-    jwt.sign(
-      payload,
-      process.env.JWT_SECRET,
-      { expiresIn: 360000 },
-      (err, token) => {
-
-        if (err) throw err;
-        res.json({ token }).send('Logged-in user!');
-      },
-    );
-    // res.json({token}).send('Logged-in user!');
-  }} catch (e) {
+      res.status(400).json({ erros: [{ mdg: 'Credenciais inválidas!' }] });
+      return;
+    } else {
+      const payload = {
+        user: {
+          id: user.id,
+        },
+      };
+      jwt.sign(
+        payload,
+        process.env.JWT_SECRET,
+        { expiresIn: 360000 },
+        (err, token) => {
+          if (err) throw err;
+          return res.json({ token, user }).send('Logged-in user!');
+        },
+      );
+      // res.json({token}).send('Logged-in user!');
+    }
+  } catch (e) {
     console.error(e.message);
     res.status(500).send('Server error');
   }
