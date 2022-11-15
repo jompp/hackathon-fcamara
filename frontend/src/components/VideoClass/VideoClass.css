@@ -15,3 +15,9 @@
         width: 100%;
     }
 }
+
+@media (max-width: 600px) {
+    .yt-video {
+        height: 250px;
+    }
+}
