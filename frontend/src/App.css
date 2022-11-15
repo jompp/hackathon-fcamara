@@ -46,7 +46,7 @@
     flex-direction: column;
     color: #fff;
     font-size: 16px;
-    gap: 8px;
+    gap: 16px;
     padding: 15px;
 }
 
@@ -66,4 +66,69 @@
     width: 200px;
     height: 40px;
     align-self: flex-end;
+    cursor: pointer;
+}
+
+.container-form-admin form .form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.container-form-admin form .form-item select {
+  width: 100%;
+  border-radius: 0.25em;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 8px 16px;
+  line-height: 1.1;
+  background: #121214;
+  color: #fff;
+}
+
+/*LISTS*/
+.conatiner-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item-list {
+  border: 2px solid #FFA000;
+  border-radius: 8px;
+  background-color: #292D32;
+  padding: 5px 16px;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+.item-list a {
+  display: flex;
+  text-decoration: none;
+  flex: 1;
+  color: #FFA000;
+}
+.item-list a h4 {
+  margin: 0px;
+  padding: 0px;
+}
+
+.item-list img {
+  filter: contrast(0.5);
+}
+
+.item-list button {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.item-list button img {
+  filter: none;
+  max-width: 100%;
 }

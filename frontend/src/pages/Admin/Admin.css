@@ -53,6 +53,9 @@
     justify-content: center;
     align-items: center;
 }
+.btn-menu.active {
+    opacity: 0.5;
+}
 #btn-add > p {
     background-color: #FFA000;
 }

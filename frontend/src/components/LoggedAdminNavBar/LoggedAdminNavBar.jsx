@@ -8,7 +8,7 @@ import UserIcon from '../../assets/icons/user.svg'
 const LoggedAdminNavBar = () => {
   return (
     <div id="header-main">
-        <Link>
+        <Link to="/admin">
             <img src={HeaderLogo} alt="Logo Orange Juice" />
         </Link>
         <div id="header-right">
