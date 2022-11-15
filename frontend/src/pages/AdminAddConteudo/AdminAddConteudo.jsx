@@ -15,10 +15,18 @@ const AdminAddConteudo = () => {
     const { register, handleSubmit, formState:{ errors }, setValue } = useForm({});
     const navigate = useNavigate();
     const params = useParams();
+    const [user, setUser] = useState();
+
+	useEffect(() => {
+		const localUser = localStorage.getItem('@FCAMARA_USER');
+		if(localUser){
+			setUser(JSON.parse(localUser));
+		}
+	}, []);
     
     useEffect(() => {
         if(!params || !params.id) {
-            api.get('/curso')
+            api.get('/api/curso')
             .then(({data}) => {
                 setCursos(data);
                 console.log(data);
@@ -29,7 +37,7 @@ const AdminAddConteudo = () => {
 
     useEffect(() => {
         if(params && params.id) {
-            api.get(`/conteudo/${params.id}`)
+            api.get(`/api/conteudo/${params.id}`)
                 .then(({data}) => {
                     setValue('titulo', data.titulo);
                     setValue('tipo', data.tipo);
@@ -44,7 +52,7 @@ const AdminAddConteudo = () => {
     useEffect(() => {
         console.log(cursoSelected);
         if(cursoSelected && cursoSelected.trilhas){
-            api.post('/trilhas/trilha-by-ids', cursoSelected.trilhas)
+            api.post('/api/trilhas/trilha-by-ids', cursoSelected.trilhas)
                 .then(({data}) => {
                     setTrilhas(data);
                     console.log('trilhas', data);
@@ -60,13 +68,13 @@ const AdminAddConteudo = () => {
         delete data.trilha;
         delete data.curso;
         if(params && params.id){
-            api.put(`/conteudo/${params.id}`, data)
+            api.put(`/api/conteudo/${params.id}`, data)
                 .then(() => navigate('/admin/edit-conteudo', { replace: true }))
                 .catch(err => console.log(err));
         } else {
-            const conteudo = await api.post('/conteudo', data);
+            const conteudo = await api.post('/api/conteudo', data);
             console.log(conteudo.data);
-            api.post('/trilhas/addConteudo', {id: conteudo.data._id, trilha})
+            api.post('/api/trilhas/addConteudo', {id: conteudo.data._id, trilha})
                 .then(() => navigate('/admin/edit-conteudo', { replace: true }))
                 .catch(err => console.log(err));
         }
@@ -76,7 +84,7 @@ const AdminAddConteudo = () => {
         <>
         <LoggedAdminNavBar />
             <div className='admin-body'>
-                <p>Ana, você está autendicado como <span>administrador.</span></p>
+                <p>{user ? user.name : 'Admin'}, você está autendicado como <span>administrador.</span></p>
                 <h1>Painel de Controle {'>'} <span>Adicionar Conteúdo</span></h1>
                 <div className="container-form-admin">
                     <p>Adicionar conteúdo</p>

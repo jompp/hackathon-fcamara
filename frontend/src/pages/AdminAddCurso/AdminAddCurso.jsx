@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import { useForm } from "react-hook-form"
 import './AdminAddCurso.css';
@@ -9,10 +9,17 @@ const AdminAddCurso = () => {
     const { register, handleSubmit, formState:{ errors }, setValue } = useForm({});
     const navigate = useNavigate();
     const params = useParams();
+    const [user, setUser] = useState();
 
+	useEffect(() => {
+		const localUser = localStorage.getItem('@FCAMARA_USER');
+		if(localUser){
+			setUser(JSON.parse(localUser));
+		}
+	}, []);
     useEffect(() => {
         if(params && params.id) {
-            api.get(`/curso/${params.id}`)
+            api.get(`/api/curso/${params.id}`)
                 .then(({data}) => {
                     setValue('titulo', data.titulo);
                 })
@@ -23,9 +30,9 @@ const AdminAddCurso = () => {
     const onSubmit = useCallback(async (data)=>{
         console.log(data);
         if(params && params.id) {
-            await api.put(`/curso/${params.id}`, data);
+            await api.put(`/api/curso/${params.id}`, data);
         }else {
-            await api.post('/curso', data);
+            await api.post('/api/curso', data);
         }
         navigate('/admin/edit-curso', { replace: true });
     },[]);
@@ -34,7 +41,7 @@ const AdminAddCurso = () => {
         <>
         <LoggedAdminNavBar />
             <div className='admin-body'>
-                <p>Ana, você está autendicado como <span>administrador.</span></p>
+                <p>{user ? user.name : 'Admin'}, você está autendicado como <span>administrador.</span></p>
                 <h1>Painel de Controle {'>'} <span>Adicionar Curso</span></h1>
                 <div className="container-form-admin">
                     <p>Adicionar curso</p>

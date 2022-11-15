@@ -7,10 +7,21 @@ import AddAdmin from '../../assets/icons/add-admin.svg'
 import EditAdmin from '../../assets/icons/edit-admin.svg'
 import DelAdmin from '../../assets/icons/del-admin.svg'
 import ViewAdmin from '../../assets/icons/view-admin.svg'
+import ContentIcon from '../../assets/icons/content.svg'
+import CourseIcon from '../../assets/icons/course.svg'
+import TrilhaIcon from '../../assets/icons/trilha.svg'
 
 const Admin = () => {
     const [option, setOption] = useState('');
     const [visibilityOptions, setVisibilityOptions] = useState(false);
+    const [user, setUser] = useState();
+
+	useEffect(() => {
+		const localUser = localStorage.getItem('@FCAMARA_USER');
+		if(localUser){
+			setUser(JSON.parse(localUser));
+		}
+	}, []);
 
     useEffect(() => {
         console.log(option);
@@ -25,7 +36,7 @@ const Admin = () => {
         <>
             <LoggedAdminNavBar />
             <div className='admin-body'>
-                <p>Ana, você está autendicado como <span>administrador.</span></p>
+                <p>{user ? user.name : 'Admin'}, você está autendicado como <span>administrador.</span></p>
                 <h1>Painel de Controle</h1>
                 <div id="admin-menu">
                     <Link id="btn-add" className={`btn-menu ${option === 'add' ? 'active' : ''}`} onClick={() => {
@@ -89,7 +100,7 @@ const Admin = () => {
                             { option !== 'del' ? (
                                 <Link to={`/admin/${option}-curso`} id="btn-curso" className='btn-menu'>
                                     <div>
-                                        <img src={AddAdmin} alt="Icone adicionar" />
+                                        <img src={CourseIcon} alt="Icone adicionar" />
                                     </div>
                                     <p>Curso</p>
                                 </Link>
@@ -98,13 +109,13 @@ const Admin = () => {
                             }
                             <Link to={`/admin/${option}-trilha`} id="btn-trilha" className='btn-menu'>
                                 <div>
-                                    <img src={DelAdmin} alt="Icone excluir" />
+                                    <img src={TrilhaIcon} alt="Icone excluir" />
                                 </div>
                                 <p>Trilha</p>
                             </Link>
                             <Link to={`/admin/${option}-conteudo`} id="btn-conteudo" className='btn-menu'>
                                 <div>
-                                    <img src={EditAdmin} alt="Icone editar" />
+                                    <img src={ContentIcon} alt="Icone editar" />
                                 </div>
                                 <p>Conteúdo</p>
                             </Link>

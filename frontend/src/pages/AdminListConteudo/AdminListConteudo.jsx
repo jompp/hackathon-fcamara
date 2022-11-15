@@ -11,8 +11,16 @@ import api from '../../service/api';
 const AdminListConteudo = () => {
     const [conteudos, setConteudos] = useState([]);
     const { pathname } = useLocation();
+    const [user, setUser] = useState();
+
+	useEffect(() => {
+		const localUser = localStorage.getItem('@FCAMARA_USER');
+		if(localUser){
+			setUser(JSON.parse(localUser));
+		}
+	}, []);
     useEffect(()=>{
-        api.get('/conteudo/get-all')
+        api.get('/api/conteudo/get-all')
             .then(response => {
                 setConteudos(response.data);
                 console.log(response.data);
@@ -21,7 +29,7 @@ const AdminListConteudo = () => {
     },[]);
 
     const deleteItem = useCallback((idConteudo) => {
-        api.delete(`/conteudo/${idConteudo}`)
+        api.delete(`/api/conteudo/${idConteudo}`)
             .then(response => {
                 setConteudos(state => state.filter(aux => aux._id !== idConteudo));
                 console.log(response.data);
@@ -33,7 +41,7 @@ const AdminListConteudo = () => {
         <>
             <LoggedAdminNavBar />
             <div className="admin-body">
-                <p>Ana, você está autendicado como <span>administrador.</span></p>
+                <p>{user ? user.name : 'Admin'}, você está autendicado como <span>administrador.</span></p>
                 <h1>Painel de Controle {'>'} <span>Lista de conteúdos</span></h1>
                 <div className="conatiner-items">
                     {conteudos.map(conteudo => (

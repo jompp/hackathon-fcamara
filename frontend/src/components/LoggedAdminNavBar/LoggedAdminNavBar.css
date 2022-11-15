@@ -12,6 +12,7 @@
     width: auto;
     height: 70px;
     object-fit: contain;
+    border-radius: 70px;
 }
 #header-right{
     display: flex;

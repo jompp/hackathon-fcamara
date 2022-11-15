@@ -8,11 +8,11 @@ import DelAdmin from '../../assets/icons/del-admin.svg'
 import api from '../../service/api';
 
 
-const AdminListCurso = () => {
+const AdminListCurso = ({user}) => {
     const [cursos, setCursos] = useState([]);
     const {pathname} = useLocation();
     useEffect(()=>{
-        api.get('/curso')
+        api.get('/api/curso')
             .then(response => setCursos(response.data))
             .catch(err => console.log(err));
     },[]);
@@ -21,7 +21,7 @@ const AdminListCurso = () => {
         <>
             <LoggedAdminNavBar />
             <div className="admin-body">
-                <p>Ana, você está autendicado como <span>administrador.</span></p>
+                <p>{user ? user.name : 'Admin'}, você está autendicado como <span>administrador.</span></p>
                 <h1>Painel de Controle {'>'} <span>Adicionar Curso</span></h1>
                 <div className='conatiner-items'>
                     {cursos.map(curso => (

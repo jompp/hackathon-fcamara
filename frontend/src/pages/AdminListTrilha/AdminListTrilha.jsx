@@ -11,9 +11,16 @@ import api from '../../service/api';
 const AdminListTrilha = () => {
     const [trilhas, setTrilhas] = useState([]);
     const { pathname } = useLocation();
+    const [user, setUser] = useState();
 
+	useEffect(() => {
+		const localUser = localStorage.getItem('@FCAMARA_USER');
+		if(localUser){
+			setUser(JSON.parse(localUser));
+		}
+	}, []);
     useEffect(()=>{
-        api.get('/trilhas')
+        api.get('/api/trilhas')
             .then(response => {
                 setTrilhas(response.data);
                 console.log(response.data);
@@ -22,7 +29,7 @@ const AdminListTrilha = () => {
     },[]);
     
     const deleteItem = useCallback((idTrilha) => {
-        api.delete(`/trilhas/${idTrilha}`)
+        api.delete(`/api/trilhas/${idTrilha}`)
             .then(response => {
                 setTrilhas(state => state.filter(aux => aux._id !== idTrilha));
                 console.log(response.data);
@@ -33,7 +40,7 @@ const AdminListTrilha = () => {
         <>
             <LoggedAdminNavBar />
             <div className="admin-body">
-                <p>Ana, você está autendicado como <span>administrador.</span></p>
+                <p>{user ? user.name : 'Admin'}, você está autendicado como <span>administrador.</span></p>
                 <h1>Painel de Controle {'>'} <span>Lista de trilhas</span></h1>
                 <div className="conatiner-items">
                     {trilhas.map(trilha => (
