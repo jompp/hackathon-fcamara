@@ -30,12 +30,14 @@ const UserSchema = new mongoose.Schema({
     id_trilha: { type:mongoose.Schema.Types.ObjectId,
     ref:'trilha'},
     progresos:[{
-id_conteudo:  {type:mongoose.Schema.Types.ObjectId,
-ref:'conteudo'
-    },check:{
-      type:Boolean
-    }
-  }]
+      id_conteudo:  {
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'conteudo'
+      },
+      check:{
+        type:Boolean
+      }
+    }]
   }]
 });
 

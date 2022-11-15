@@ -36,3 +36,17 @@ exports.addConteudo= async function( trilha, conteudo){
        throw Error("Error while creating trilha")
    }
 }
+
+
+exports.getById = async function (query, page, limit) {
+
+    try {
+      var user = Trilha.findById(query);
+      return user;
+    } catch (e) {
+      // Log Errors
+      console.log(e)
+      throw Error('Error while Finding Trilha');
+    }
+  };
+  

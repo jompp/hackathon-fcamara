@@ -3,10 +3,10 @@ const config = require('config');
 const { head } = require('request');
 const decodeToken = async function(token)
 {
-    
+    console.log(token)
     try{var data = await jwt.verify(token, process.env.jwtSecret);
         return data;
-        next()
+    
     }catch(e){
         throw Error('Problema ao verificar token!');
 
