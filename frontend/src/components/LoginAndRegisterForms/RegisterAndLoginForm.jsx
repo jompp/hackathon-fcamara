@@ -71,7 +71,7 @@ export default function Form(props) {
 				
 				<div className='back-to-login-box'>
 					<img src={arrowLeftIcon} alt="Seta para a esquerda" />
-					<Link to='/login' className='back-to-login link'>Voltar para o login</Link>
+					<Link to='/' className='back-to-login link'>Voltar para o login</Link>
 				</div>
 			</form>
 		</section>
