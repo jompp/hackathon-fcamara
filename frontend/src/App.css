@@ -10,3 +10,60 @@
     box-shadow: 0 0 0 0;
     outline: 0;
 }
+
+/*ADMIN*/
+.admin-body {
+  display: flex;
+  flex-direction: column;
+  background-color: #1E1E1E;
+  flex: 1;
+  min-height: calc(100vh - 92px);
+  padding: 32px;
+}
+.admin-body span {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+}
+.container-form-admin {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: #292D32;
+}
+.container-form-admin p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  background-color: #FFA000;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.container-form-admin form {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-size: 16px;
+    gap: 8px;
+    padding: 15px;
+}
+
+.container-form-admin form input {
+    background: #121214;
+    border-radius: 2px;
+    padding: 8px 16px;
+    color: #fff;
+}
+
+.container-form-admin form button {
+    color: #292D32;
+    background-color: #FFA000;
+    border-radius: 2px;
+    font-weight: 800;
+    font-size: 16px;
+    width: 200px;
+    height: 40px;
+    align-self: flex-end;
+}
