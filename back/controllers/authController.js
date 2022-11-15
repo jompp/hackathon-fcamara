@@ -4,9 +4,14 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 const config = require('config');
+require('dotenv/config')
 
 const getAuth = async (req, res, next) => {
   const authReturn = await auth.autorizar(req.headers);
+  if(authReturn.status == 401){
+    res.status(401).send(authReturn.error)
+    return
+  }
   try {
     const _id = authReturn.json.id;
     const user = await UserService.getUserById({ _id }, null, null);
@@ -32,13 +37,15 @@ const login = async (req, res, next) => {
     let user = await UserService.getUserByEmail(email);
     if (!user) {
       res.status(400).json({ errors: [{ msg: 'Credenciais inválidas!' }] });
+      return
     }
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res
+       res
         .status(400)
         .json({ erros: [{ mdg: 'Credenciais inválidas!' }] });
-    }
+      return
+      }else{
     const payload = {
       user: {
         id: user.id,
@@ -54,7 +61,7 @@ const login = async (req, res, next) => {
       },
     );
     // res.json({token}).send('Logged-in user!');
-  } catch (e) {
+  }} catch (e) {
     console.error(e.message);
     res.status(500).send('Server error');
   }

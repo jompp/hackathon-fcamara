@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom"
 import './UserRegister.css'
 
 import * as yup from "yup";
@@ -9,19 +10,29 @@ import LoadingCircle from '../../components/LoadingCircle/LoadingCircle';
  
 export default function UserRegister() {
   const [waitingResponse, setWaitingResponse] = useState(false)
+  const navigate = useNavigate()
 
-  const sendForm =  userData => {
+  const sendForm = async userData => {
     setWaitingResponse(true)  
-    /* const response = await api.post('/api/user', userData)
-    console.log(response) */
-    setTimeout(() => {setWaitingResponse(false)}, 5000) 
+    try {
+      const response = await api.post('/api/user', userData)
+      console.log(response)
+      navigate('/cursos')
+    } catch(e) {
+      if(e.response.status === 400) {
+        alert('Esse usuário já existe')
+      } else {
+        alert("Ops, alguma coisa deu errado. Tente novamente mais tarde.")
+      }
+    }
+    setWaitingResponse(false) 
   }
 
   return (
     <main className='register-form-page'>
       <Form 
         formLegend='Crie sua conta'
-        text={<p className='form-text'>Ao se registrar, você aceita nossos <a href='#'>termos de uso</a> e a nossa <a href="#">política de privacidade</a>.</p>}
+        text={<p className='form-text'>Ao se registrar, você aceita nossos <a className='link' href='#'>termos de uso</a> e a nossa <a className='link' href="#">política de privacidade</a>.</p>}
         textButton={waitingResponse ? <LoadingCircle /> : 'Cadastrar'}
         yupSchema={yup.object({
           name: yup.string().required('Preencha esse campo'),
