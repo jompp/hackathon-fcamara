@@ -7,6 +7,10 @@ const config = require('config');
 
 const getAuth = async (req, res, next) => {
   const authReturn = await auth.autorizar(req.headers);
+  if(authReturn.status == 401){
+    res.status(401).send(authReturn.error)
+    return
+  }
   try {
     const _id = authReturn.json.id;
     const user = await UserService.getUserById({ _id }, null, null);

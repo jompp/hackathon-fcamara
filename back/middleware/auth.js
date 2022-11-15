@@ -14,9 +14,8 @@ const decodeToken = async function(token)
 }
 const autorizar = function(headers){
     return new Promise((resolve, reject)=>{
-        
-
     const token = headers['x-auth-token'];
+ console.log(token)
     if(!token){
         return resolve({
             status:401,
@@ -25,13 +24,14 @@ const autorizar = function(headers){
     }
     //Verificando token
     try{
-const decoded = jwt.verify(token, config.get('jwtSecret'))
-
-return resolve({
-    status:200, 
-    json:decoded.user
-})
+        const decoded = jwt.verify(token, config.get('jwtSecret'))
+console.log(decoded)
+        return resolve({
+            status:200, 
+            json:decoded.user
+        })
     }catch(err){
+        console.log(err)
         return resolve({
             status:401,
             error:"Token não é válido!"
