@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { redirect, useNavigate } from "react-router-dom"
 import './UserRegister.css'
 
 import * as yup from "yup";
@@ -9,12 +10,15 @@ import LoadingCircle from '../../components/LoadingCircle/LoadingCircle';
  
 export default function UserRegister() {
   const [waitingResponse, setWaitingResponse] = useState(false)
+  const navigate = useNavigate()
 
-  const sendForm =  userData => {
+  const sendForm = async userData => {
     setWaitingResponse(true)  
-    /* const response = await api.post('/api/user', userData)
-    console.log(response) */
-    setTimeout(() => {setWaitingResponse(false)}, 5000) 
+    const response = await api.post('/api/user', userData)
+    console.log(response)
+    navigate('/cursos')
+    setWaitingResponse(false)
+
   }
 
   return (
