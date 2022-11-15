@@ -16,7 +16,7 @@ export default function UserLogin() {
   }
 	
 	return (
-    <div className='login-form-page'>
+    <main className='login-form-page'>
 			<Form
 				formLegend='Faça seu login'
 				text={<p className='form-text'>Não tem conta? <a href='/cadastro'>Crie sua conta.</a></p>}
@@ -28,6 +28,6 @@ export default function UserLogin() {
         onSubmit={sendForm}
         loginError={areCredencialsWrong ? 'login-error' : null}
 			/>
-    </div>
+    </main>
   )
 }

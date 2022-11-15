@@ -1,66 +1,67 @@
-main {
+.homepage-cursos {
     padding: 5.19rem 1.94rem 6.875rem;
     background-color: #121214;
 }
 
-h2, h3 {
+.homepage-cursos h2, 
+.homepage-cursos h3 {
     color: #FFA000;
     font-weight: 700;
 }
 
-h2 {
+.homepage-cursos h2 {
     font-size: 3rem;
     font-weight: 700;
     padding-bottom: 3.31rem;
 }
 
-h3 {
+.homepage-cursos h3 {
     font-size: 2.25rem;
     padding-bottom: 1.25rem;
 }
 
-footer {
+.homepage-cursos-footer {
     background-color: #121214;
     padding-bottom: 3rem;
     padding-left: 2.125rem;
 }
 
-footer h2 {
+.homepage-cursos-footer h2 {
     font-size: 2rem;
     color: #FFFFFF;
     font-weight: 400;
     padding-bottom: 3.94rem;
 }
 
-footer .supporters-box {
+.homepage-cursos-footer .supporters-box {
     display: flex;
     align-items: center;
 }
 
-footer .supporters-box .fcamara-link {
+.homepage-cursos-footer .supporters-box .fcamara-link {
     padding-right: 10rem;
 }
 
-footer .supporters-box a {
+.homepage-cursos-footer .supporters-box a {
     padding-right: 1.81rem;
     max-width: fit-content;
 }
 
 @media (max-width:1010px) {
-    footer .supporters-box a:not(.fcamara-link) img {
+    .homepage-cursos-footer .supporters-box a:not(.fcamara-link) img {
         width: 66px;
         height: 45px;
     }
 
-    footer .supporters-box a:not(.fcamara-link) {
+    .homepage-cursos-footer .supporters-box a:not(.fcamara-link) {
         padding-right: .9rem;
     }
 
-    footer .supporters-box .fcamara-link {
+    .homepage-cursos-footer .supporters-box .fcamara-link {
         padding-right: 5rem;
     }
 
-    footer .supporters-box .fcamara-link img {
+    .homepage-cursos-footer .supporters-box .fcamara-link img {
         width: 290px;
         height: 56px;
     }
@@ -92,31 +93,31 @@ footer .supporters-box a {
         padding-bottom: 1rem;
     }
 
-    footer h2 {
+    .homepage-cursos-footer h2 {
         font-size: 1.5rem;
     }
 
-    footer .supporters-box a:not(.fcamara-link) img {
+    .homepage-cursos-footer .supporters-box a:not(.fcamara-link) img {
         width: 56px;
         height: 35px;
     }
 
-    footer .supporters-box a:not(.fcamara-link) {
+    .homepage-cursos-footer .supporters-box a:not(.fcamara-link) {
         padding-right: .6rem;
     }
 
-    footer .supporters-box .fcamara-link {
+    .homepage-cursos-footer .supporters-box .fcamara-link {
         padding-right: 3.5rem;
     }
 
-    footer .supporters-box .fcamara-link img {
+    .homepage-cursos-footer .supporters-box .fcamara-link img {
         width: 220px;
         height: 50px;
     }
 }
 
 @media (max-width: 580px) {
-    main {
+    .homepage-cursos {
         padding: 2.438rem 1rem 5.06rem;
     }
 
@@ -124,30 +125,30 @@ footer .supporters-box a {
         margin-bottom: 1.44rem;   
     }
 
-    h2 {
+    .homepage-cursos h2 {
         font-size: 1rem;
         padding-bottom: 1.313rem;
     }
 
-    footer h2 {
+    .homepage-cursos-footer h2 {
         font-size: .625rem;
         padding-bottom: 1.25rem;
     }
 
-    footer .supporters-box a:not(.fcamara-link) img {
+    .homepage-cursos-footer .supporters-box a:not(.fcamara-link) img {
         width: 35px;
         height: 28px;
     }
 
-    footer .supporters-box a:not(.fcamara-link) {
+    .homepage-cursos-footer .supporters-box a:not(.fcamara-link) {
         padding-right: 1.25rem;
     }
 
-    footer .supporters-box .fcamara-link {
+    .homepage-cursos-footer .supporters-box .fcamara-link {
         padding-right: 2.62rem;
     }
 
-    footer .supporters-box .fcamara-link img {
+    .homepage-cursos-footer .supporters-box .fcamara-link img {
         width: 111px;
         height: 24px;
     }

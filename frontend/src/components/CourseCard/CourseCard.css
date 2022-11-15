@@ -57,7 +57,7 @@
     padding-right: 3rem;
 }
 
-.course-card .tracking-access-box button {
+.course-card .tracking-access-box .access-btn {
     padding: 1rem 0;
     background-color: #FFA000;
     font-size: 1.5rem;
@@ -69,9 +69,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 
-.course-card .tracking-access-box button:hover {
+.course-card .tracking-access-box .access-btn:hover {
     background-color: #D9D9D9;
 }
 
@@ -94,7 +95,7 @@
         font-size: 1.2rem;
     }
 
-    .course-card .tracking-access-box button {
+    .course-card .tracking-access-box .access-btn {
         padding: .7rem 0;
         width: 250px;
     }
@@ -154,7 +155,7 @@
         padding-bottom: 1rem;
     }
 
-    .course-card .tracking-access-box button {
+    .course-card .tracking-access-box .access-btn {
         align-self: center;
     }
 }
@@ -194,7 +195,7 @@
         font-size: .563rem;
     }
 
-    .course-card .tracking-access-box button {
+    .course-card .tracking-access-box .access-btn {
         padding: .313rem 0;
         width: 79px;
         font-size: .625rem;

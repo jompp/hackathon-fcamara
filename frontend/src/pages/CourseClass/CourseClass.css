@@ -1,0 +1,135 @@
+.class-content {
+    background-color: #121214;
+    padding: 5.44rem 1.5rem 12.31rem;
+}
+
+.title-content-box h1,
+.title-content-box h3,
+.title-content-box h2 {
+    color: #FFA000;
+}
+
+
+.title-content-box h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.title-content-box h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: .875rem 0 3rem;
+}
+
+.video-nav-box {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.125rem;
+    gap: 2.5rem;
+}
+
+.module-summary {
+    padding: 5.44rem 0 4.94rem;
+}
+
+.module-summary h2 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #FFA000;
+}
+
+.module-summary .module-lesson-subtitle {
+    color: #FFA000;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: .875rem 0 1.94rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.module-summary .dot {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background-color: #FFA000;
+    border-radius: 100%;
+}
+
+.module-summary .summary-txt {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #D9D9D9;
+}
+
+.title-nav-arrows-box.mobile {
+    display: none;
+}
+
+.nav-title-box-mobile {
+    flex-grow: 1;
+}
+
+@media (max-width: 900px) {
+    .class-content {
+        padding: 0 1rem 2.94rem;
+    }
+
+    .title-content-box h1 {
+        padding-top: 2.25rem;
+    }
+
+    .title-content-box h3 {
+        padding-bottom: 1.3rem;
+    }
+    
+    .video-nav-box {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .video-title-box {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .title-nav-arrows-box.mobile {
+        display: flex;
+    }
+
+    .module-summary {
+        padding-top: 1.25rem;
+    }
+
+    .module-summary .module-lesson-subtitle {
+        padding: 0 0 .69rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .title-content-box h1 {
+        font-size: 1.5rem;
+    }
+
+    .title-content-box h3 {
+        font-size: 1rem;
+    }
+
+    .module-summary {
+        padding-bottom: .5rem;
+    }
+
+    .module-summary h2 {
+        padding-bottom: 0;
+        font-size: .94rem;
+    }
+
+    .module-summary .module-lesson-subtitle {
+        font-size: .625rem;
+    }
+
+    .module-summary .summary-txt {
+        font-size: .75rem;
+    }
+}
