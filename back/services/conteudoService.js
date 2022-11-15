@@ -13,7 +13,6 @@ exports.getOneConteudo = async function(body){
  exports.getById = async function(body){
     try{
      let conteudo = await Conteudo.findById(body._id);
- 
      return conteudo
     }catch(e){
         console.log(e)

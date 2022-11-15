@@ -24,19 +24,22 @@ const UserSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  progresso:[{
-    id_curso:{  type:mongoose.Schema.Types.ObjectId,
-      ref:'curso'},
-    id_trilha: { type:mongoose.Schema.Types.ObjectId,
-    ref:'trilha'},
-    progresos:[{
-id_conteudo:  {type:mongoose.Schema.Types.ObjectId,
-ref:'conteudo'
-    },check:{
-      type:Boolean
-    }
-  }]
-  }]
+  cursos:[
+    {
+      id_curso:{  type:mongoose.Schema.Types.ObjectId,
+        ref:'curso'},
+  }],
+  progresso:[
+   
+    {
+      id_conteudo:  {
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'conteudo'
+      },
+      check:{
+        type:Boolean
+      }
+    }]
 });
 
 module.exports = User = mongoose.model('user', UserSchema);

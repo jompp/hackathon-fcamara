@@ -8,6 +8,8 @@ const authController = require('../../controllers/authController')
 
 //@route GET api/auth
 //@access Public
+
+
 router.get('/', authController.getAuth)
 
 //@route POST api/auth
