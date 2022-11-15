@@ -1,0 +1,155 @@
+.homepage-cursos {
+    padding: 5.19rem 1.94rem 6.875rem;
+    background-color: #121214;
+}
+
+.homepage-cursos h2, 
+.homepage-cursos h3 {
+    color: #FFA000;
+    font-weight: 700;
+}
+
+.homepage-cursos h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    padding-bottom: 3.31rem;
+}
+
+.homepage-cursos h3 {
+    font-size: 2.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.homepage-cursos-footer {
+    background-color: #121214;
+    padding-bottom: 3rem;
+    padding-left: 2.125rem;
+}
+
+.homepage-cursos-footer h2 {
+    font-size: 2rem;
+    color: #FFFFFF;
+    font-weight: 400;
+    padding-bottom: 3.94rem;
+}
+
+.homepage-cursos-footer .supporters-box {
+    display: flex;
+    align-items: center;
+}
+
+.homepage-cursos-footer .supporters-box .fcamara-link {
+    padding-right: 10rem;
+}
+
+.homepage-cursos-footer .supporters-box a {
+    padding-right: 1.81rem;
+    max-width: fit-content;
+}
+
+@media (max-width:1010px) {
+    .homepage-cursos-footer .supporters-box a:not(.fcamara-link) img {
+        width: 66px;
+        height: 45px;
+    }
+
+    .homepage-cursos-footer .supporters-box a:not(.fcamara-link) {
+        padding-right: .9rem;
+    }
+
+    .homepage-cursos-footer .supporters-box .fcamara-link {
+        padding-right: 5rem;
+    }
+
+    .homepage-cursos-footer .supporters-box .fcamara-link img {
+        width: 290px;
+        height: 56px;
+    }
+}
+
+@media (max-width: 870px) { 
+    h2 {
+        font-size: 2.6rem;
+        font-weight: 700;
+        padding-bottom: 3.31rem;
+    }
+    
+    h3 {
+        font-size: 1.9rem;
+        padding-bottom: 1.25rem;
+    }
+}
+
+@media (max-width: 740px) {
+    h3 {
+        display: none;
+    }
+
+    .courses-grid-mobile {
+        display: flex;
+        gap: 1.56rem;
+        overflow-x: scroll;
+        margin-bottom: 5rem;
+        padding-bottom: 1rem;
+    }
+
+    .homepage-cursos-footer h2 {
+        font-size: 1.5rem;
+    }
+
+    .homepage-cursos-footer .supporters-box a:not(.fcamara-link) img {
+        width: 56px;
+        height: 35px;
+    }
+
+    .homepage-cursos-footer .supporters-box a:not(.fcamara-link) {
+        padding-right: .6rem;
+    }
+
+    .homepage-cursos-footer .supporters-box .fcamara-link {
+        padding-right: 3.5rem;
+    }
+
+    .homepage-cursos-footer .supporters-box .fcamara-link img {
+        width: 220px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 580px) {
+    .homepage-cursos {
+        padding: 2.438rem 1rem 5.06rem;
+    }
+
+    .courses-grid-mobile {
+        margin-bottom: 1.44rem;   
+    }
+
+    .homepage-cursos h2 {
+        font-size: 1rem;
+        padding-bottom: 1.313rem;
+    }
+
+    .homepage-cursos-footer h2 {
+        font-size: .625rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .homepage-cursos-footer .supporters-box a:not(.fcamara-link) img {
+        width: 35px;
+        height: 28px;
+    }
+
+    .homepage-cursos-footer .supporters-box a:not(.fcamara-link) {
+        padding-right: 1.25rem;
+    }
+
+    .homepage-cursos-footer .supporters-box .fcamara-link {
+        padding-right: 2.62rem;
+    }
+
+    .homepage-cursos-footer .supporters-box .fcamara-link img {
+        width: 111px;
+        height: 24px;
+    }
+}

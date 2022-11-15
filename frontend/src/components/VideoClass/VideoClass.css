@@ -1,0 +1,23 @@
+.yt-video {
+    background-color: bisque;
+    width: 55%;
+    height: 520px;
+}
+
+@media (max-width: 1150px) {
+    .yt-video {
+        width: 65%;
+    }
+}
+
+@media (max-width: 900px) {
+    .yt-video {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .yt-video {
+        height: 250px;
+    }
+}

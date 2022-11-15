@@ -1,0 +1,90 @@
+#comment-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+#comment-main h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 42px;
+    color: #FFA000;
+    margin: 8px 0px;
+    
+}
+
+#comment-body {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px ;
+    background: #292D32;
+    padding: 10px 20px;
+}
+
+#comment-auth {
+    display: flex;
+    color: #D9D9D9;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 19px;
+    gap: 8px;
+    align-self: flex-end;
+    padding: 8px;
+}
+
+#comment-auth span, #comment-auth a {
+    color: #FFA000;
+    text-decoration: none;
+}
+
+#comment-message {
+    display: flex;
+    
+    gap: 20px;
+    position: relative;
+    max-width: 100vw;
+
+}
+
+#comment-message img {
+    width: 148px;
+    height: 148px;
+    border-radius: 148px;
+    object-fit: cover;
+    border: 3px solid #FFA000;
+    
+}
+
+#comment-message textarea {
+   flex: 1;
+   background-color: #121214;
+   padding: 8px;
+}
+
+#comment-body button {
+    background: #FFA800;
+    border-radius: 3px;
+    align-self: flex-end;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: center;
+    color: #292D32;
+    padding: 0px 90px;
+    margin: 8px 0px;
+
+}
+
+@media only screen and (max-width: 600px) {
+    #comment-message img {
+       display: none;
+     
+    }
+    #comment-main h2 {
+        font-size: 1.1rem;
+    }
+  }

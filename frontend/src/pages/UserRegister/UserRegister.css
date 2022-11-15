@@ -1,0 +1,18 @@
+.register-form-page {
+    background-color: #121214;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-form-page .forgot-login-password {
+    display: none;
+}
+
+@media(max-width: 550px) {
+    .login-register-form .form-text {
+        display: none;
+    }
+}
