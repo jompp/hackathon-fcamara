@@ -104,8 +104,8 @@
               summary: "Get user information",
               description: "",
               parameters:[
-                {name:"x-auth-token",
-                  in:"headers",    
+                { name:"x-auth-token",
+                  in:"header",    
                   required:true, 
                 }
               ],
@@ -311,6 +311,27 @@
               },
             ],
           
+          } , get:{
+            tags:["curso"],
+            summary: "Get all cursos",
+            description: "",
+           
+            consumes: ["application/json"],
+            produces: ["application/json"],
+            responses: {
+              200: {
+                description: "Success",
+              },
+              400: {
+                description: "Bad Request",
+              },
+            },
+            security: [
+              {
+                Bearer: [],
+              },
+            ],
+          
           }
         },"/curso/addTrilha":{
           post:{
@@ -383,10 +404,13 @@
           }
         },"/conteudo":{
           post:{
-            tags:["curso"],
+            tags:["conteudo"],
             summary: "Cria conteudo",
             description: "",
-            parameters:[
+            parameters:[ { name:"x-auth-token",
+            in:"header",    
+            required:true, 
+          },
               {name:"body",
                 in:"body",    
                 schema:{
