@@ -40,6 +40,8 @@ $ npm install
 # Inicie o servidor do back-end
 $ npm run server
 ```
+_Obs: Crie um arquivo .env na raiz das pastas `frontend` e `back` e insira as variáveis de ambiente no mesmo modelo do arquivo .env.example. Imagem de exemplo das variáveis do backend abaixo._
+![Exemplo](https://res.cloudinary.com/dofx12yrd/image/upload/v1668564349/Captura_de_tela_de_2022-11-15_23-05-31_wwtvla.png)
 
 ### :open_file_folder: Documentações
 #### Back-end:
